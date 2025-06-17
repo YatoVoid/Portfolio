@@ -187,4 +187,22 @@
 				}
 			});
 
+
+		// Fixed Square Fade Animation
+$('.fixed-square')
+    .scrollex({
+        mode: 'middle',
+        top: '-60vh',
+        bottom: '-60vh',
+        initialize: function() {
+            $(this).removeClass('animate');
+        },
+        enter: function() {
+            $(this).addClass('animate');
+        }
+    });
+
+	
 })(jQuery);
+
+
