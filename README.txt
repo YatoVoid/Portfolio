@@ -13,9 +13,8 @@ for phone when naviagation clicked , add animation scroll
 
 
 
-1. gradient like sea
-2. images align size etc
-3. everything else
+1. add tech face logo
+2. everything else
 
 Server.
 
