@@ -234,7 +234,7 @@ input, select, textarea {
 		font-size: 0.6em;
 	}
 
-	@media screen and (max-width: 736px) {
+	@media screen and (max-width: 737px) {
 
 		h1 {
 			font-size: 2em;
@@ -1305,7 +1305,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 737px) {
 
 			.row {
 				display: flex;
@@ -2193,7 +2193,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 737px) {
 
 			.features section {
 				padding: 2.5em 1.5em 0.1em 5.5em ;
@@ -2978,7 +2978,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 737px) {
 
 			.split > * {
 				margin: 3em 0 0 0;
@@ -3114,7 +3114,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 737px) {
 
 			.spotlights > section > .image {
 				height: 50vh;
@@ -3223,7 +3223,7 @@ input, select, textarea {
 
 			}
 
-			@media screen and (max-width: 736px) {
+			@media screen and (max-width: 737px) {
 
 				.wrapper > .inner {
 					padding: 3em 2em 1em 2em ;
@@ -3291,7 +3291,7 @@ input, select, textarea {
 
 			}
 
-			@media screen and (max-width: 736px) {
+			@media screen and (max-width: 737px) {
 
 				.wrapper.fullscreen {
 					padding: 2em 0;
@@ -3421,7 +3421,7 @@ input, select, textarea {
 							color: #ffffff;
 						}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 737px) {
 
 			#header {
 				padding: 1em 2em;
@@ -3473,7 +3473,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 737px) {
 
 			#sidebar + #wrapper {
 				padding-top: 0;
@@ -3879,7 +3879,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 737px) {
 
 			#sidebar {
 				display: none;
@@ -3909,7 +3909,7 @@ input, select, textarea {
 
 			}
 
-			@media screen and (max-width: 736px) {
+			@media screen and (max-width: 737px) {
 
 				#intro p {
 					font-size: 1em;
@@ -3926,7 +3926,7 @@ input, select, textarea {
 		}
 
 		
-		@media screen and (max-width:736px) {
+		@media screen and (max-width:737px) {
 			.desktop_nav {
 				display: none !important;
 		
@@ -3935,7 +3935,7 @@ input, select, textarea {
 
 
 
-		@media screen and (min-width:736px) {
+		@media screen and (min-width:737px) {
 			.mobile_nav {
 				display: none !important;
 			}
@@ -3964,7 +3964,7 @@ input, select, textarea {
     transition: all 0.3s ease;
 }
 
-@media screen and (min-width: 736px) {
+@media screen and (min-width: 737px) {
     #mobileToggle {
         display: none;
     }
@@ -4364,13 +4364,12 @@ html {
 
 
 
-.logo-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem; 
-    padding: 1rem 0;
-	
+.logo-img{
+	width: 100%;
+	margin-bottom: 40%;
 }
+
+
 
 .mobile-logo-container {
     display: flex;
@@ -4381,15 +4380,33 @@ html {
 	
 }
 
+
+
 /* Responsive adjustments */
 @media screen and (max-width: 1280px) {
-    .logo-container {
-        margin-bottom: 1.5rem;  /* Smaller margin for iPad */
+
+    .logo-img {
+		
+        width: 70px;        /* fixed size to avoid logo shrinking too much */
+		/* padding-left: 300px; */
     }
+	.nav-img{
+		padding-left: 150px;
+	}
 }
 
 @media screen and (max-width: 980px) {
-    .logo-container {
-        margin-bottom: 1rem;    /* Even smaller for tablets */
+   
+}
+
+@media screen and (max-width: 767px) {
+   
+	.logo-img {
+		
+        width: 100%;        /* fixed size to avoid logo shrinking too much */
+		/* padding-left: 300px; */
+		align-self: center;
+		
     }
+	
 }
