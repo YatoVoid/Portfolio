@@ -98,7 +98,7 @@ input, select, textarea {
 
 	body {
 		--angle: 45deg; 
-		background: linear-gradient(180deg,rgb(132, 187, 196) 0%, rgb(56, 73, 148) 49%, rgb(3, 3, 34) 91%);
+		background: linear-gradient(180deg,rgb(116, 148, 175) 0%, rgb(56, 73, 148) 49%, rgb(3, 3, 34) 91%);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -4361,3 +4361,35 @@ html {
 #three .inner > div section:nth-child(4) { animation-delay: 0.4s; }
 #three .inner > div section:nth-child(5) { animation-delay: 0.5s; }
 #three .inner > div section:nth-child(6) { animation-delay: 0.6s; }
+
+
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem; 
+    padding: 1rem 0;
+	
+}
+
+.mobile-logo-container {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);  /* Visual separator */
+    margin-bottom: 1rem;
+	
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1280px) {
+    .logo-container {
+        margin-bottom: 1.5rem;  /* Smaller margin for iPad */
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .logo-container {
+        margin-bottom: 1rem;    /* Even smaller for tablets */
+    }
+}

@@ -109,20 +109,20 @@
 		}
 
 	// Scrolly.
-		$('.scrolly').scrolly({
-			speed: 1000,
-			offset: function() {
+		// $('.scrolly').scrolly({
+		// 	speed: 1000,
+		// 	offset: function() {
 
-				// If <=large, >small, and sidebar is present, use its height as the offset.
-					if (breakpoints.active('<=large')
-					&&	!breakpoints.active('<=small')
-					&&	$sidebar.length > 0)
-						return $sidebar.height();
+		// 		// If <=large, >small, and sidebar is present, use its height as the offset.
+		// 			if (breakpoints.active('<=large')
+		// 			&&	!breakpoints.active('<=small')
+		// 			&&	$sidebar.length > 0)
+		// 				return $sidebar.height();
 
-				return 0;
+		// 		return 0;
 
-			}
-		});
+		// 	}
+		// });
 
 	// Spotlights.
 		$('.spotlights > section')
