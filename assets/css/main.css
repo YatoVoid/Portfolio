@@ -4272,14 +4272,6 @@ html {
   display: inline-block;
 }
 
-#three .button {
-
-  /* background: linear-gradient(45deg, #3498db, #2980b9);
-  color: #ffffff;
-
-  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
-   */
-}
 
 
 
@@ -4452,153 +4444,204 @@ html {
 	}
 	
 }
+#learnmore-header {
+  text-align: center;
+  margin-top: 40px;
+}
 
+/* Title style */
+#learnmore-header .title {
+  display: block;
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
 
+/* Main nav circle container - Glass effect */
+#learnmore-header nav {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  width: auto;
+  max-width: calc(100vw - 40px);
+  
+  /* Glassmorphism styling */
+  background: rgba(49, 36, 80, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  filter: saturate(120%);
+  
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 30px;
+  
+  /* Enhanced glass effect with shadows */
+  box-shadow: 
+    4px 4px 20px rgba(0, 0, 0, 0.15),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.1),
+    2px 2px 8px rgba(255, 255, 255, 0.08),
+    inset -1px -1px 1px rgba(255, 255, 255, 0.2);
+  
+  animation: slide-in 1s ease-out;
+  z-index: 100;
+}
 
+/* Navigation list */
+#learnmore-header nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0 30px;
+  list-style: none;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
 
+/* List item spacing */
+#learnmore-header nav ul li:not(:last-child) {
+  margin-right: clamp(10px, 3vw, 40px);
+}
 
-#learnmore-header {  
-            font-family: 'Lexend Exa', sans-serif;
-            position: relative;
-            padding: 20px;
-            min-height: 80px;
-        }
+/* Nav items */
+#learnmore-header nav ul li {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: clamp(5px, 1.5vw, 10px);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
 
-        #learnmore-header .title {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #2375D8;
-            text-decoration: none;
-        }
+/* Nav links */
+#learnmore-header nav ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: clamp(0.4em, 1vw, 0.6em);
+  font-weight: bold;
+  letter-spacing: clamp(0.1em, 0.3vw, 0.25em);
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+}
 
-        #learnmore-header nav {
-            position: absolute;
-            top: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: inline-block;
-            border: 2px solid #EBECF1;
-            border-radius: 30px;
-            animation: whaletale-slide-in 1s ease-out;
-        }
+/* Active link */
+#learnmore-header nav ul li a.active {
+  color: rgba(255, 255, 255, 1);
+  font-weight: bold;
+}
 
-        #learnmore-header nav ul {
-            position: relative;
-            display: flex;
-            flex: 1 1 auto;
-            margin: 0;
-            padding: 0 30px;
-            list-style-type: none;
-        }
+/* Dropdown submenu - Glass effect */
+#learnmore-header nav ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 45px;
+  left: -10px;
+  margin: 0;
+  padding: 10px 0;
+  
+  /* Glassmorphism styling for dropdown */
+  background: rgba(49, 36, 80, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  filter: saturate(120%);
+  
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  
+  /* Enhanced glass effect */
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.2),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.1),
+    0 4px 12px rgba(255, 255, 255, 0.05);
+  
+  transition: all 0.3s ease;
+  display: block;
+  min-width: 180px;
+  z-index: 999;
+}
 
-        #learnmore-header nav ul li:not(:last-child) {
-            margin-right: 40px;
-        }
+/* Submenu items */
+#learnmore-header nav ul li ul li {
+  margin: 0;
+  width: 100%;
+  padding: 8px 20px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
 
-        #learnmore-header nav ul li {
-            border: 2px solid transparent;
-            border-radius: 5px;
-            padding: 10px;
-            transition: background 0.2s;
-        }
+#learnmore-header nav ul li ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  display: block;
+  font-size: 0.55em;
+  letter-spacing: 0.2em;
+}
 
-        #learnmore-header nav ul li a {
-            color: #2375D8;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: color 0.2s;
-        }
+/* Hover effects with glass styling */
+#learnmore-header nav ul li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 15px rgba(0, 0, 0, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
 
-        #learnmore-header nav ul li a.active {
-            color: #EC4138;
-            font-weight: bold;
-        }
+#learnmore-header nav ul li:hover > a {
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
 
-        #learnmore-header nav ul li ul {
-            visibility: hidden;
-            opacity: 0;
-            position: absolute;
-            display: block;
-            margin: 12px -12px;
-            padding: 10px 0 0 0;
-            background: #FFA91B;
-            border: 2px solid #F7C833;
-            border-right: 2px solid #F89329;
-            border-bottom: 2px solid #F89329;
-            border-radius: 5px;
-            transition: opacity 0.2s, visibility 0.2s;
-            min-width: 200px;
-            z-index: 1000;
-        }
+/* Show submenu on hover */
+#learnmore-header nav ul li:hover ul {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-2px);
+}
 
-        /* Add invisible padding at the top to create a hover bridge */
-        #learnmore-header nav ul li ul::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: 0;
-            right: 0;
-            height: 10px;
-            background: transparent;
-        }
+#learnmore-header nav ul li:hover ul li {
+  background: transparent;
+}
 
-        /* Keep dropdown visible when hovering over the dropdown itself */
-        #learnmore-header nav ul li ul:hover {
-            visibility: visible;
-            opacity: 1;
-        }
+#learnmore-header nav ul li:hover ul li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+}
 
-        #learnmore-header nav ul li ul li {
-            margin: -2px 0 0 -2px;
-            width: calc(100% - 20px);
-            line-height: 1.7;
-        }
+#learnmore-header nav ul li:hover ul li a {
+  color: rgba(255, 255, 255, 0.9);
+}
 
-        #learnmore-header nav ul li ul li a {
-            color: #2375D8;
-            text-transform: none;
-        }
+#learnmore-header nav ul li:hover ul li:hover a {
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
 
-        #learnmore-header nav ul li:hover {
-            background: #EC4138;
-            border: 2px solid #F05749;
-            border-right: 2px solid #E02A21;
-            border-bottom: 2px solid #E02A21;
-        }
-
-        #learnmore-header nav ul li:hover a {
-            color: #F9F8FD;
-        }
-
-        #learnmore-header nav ul li:hover ul {
-            visibility: visible;
-            opacity: 1;
-            box-shadow: 0px 3px 5px 2px #EBECF1;
-        }
-
-        #learnmore-header nav ul li:hover ul li a {
-            color: #F9F8FD;
-        }
-
-        #learnmore-header nav ul li:hover ul li a.active {
-            color: #FFEB3B;
-            font-weight: bold;
-        }
-
-        @keyframes whaletale-slide-in {
-            0% {
-                top: -50px;
-            }
-            40% {
-                top: 20px;
-            }
-            70% {
-                top: 10px;
-            }
-            100% {
-                top: 15px;
-            }
-        }
+/* Slide-in animation */
+@keyframes slide-in {
+  0% {
+    top: -50px;
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  40% {
+    top: 20px;
+    opacity: 0.7;
+  }
+  70% {
+    top: 10px;
+    opacity: 0.9;
+  }
+  100% {
+    top: 15px;
+    opacity: 1;
+    backdrop-filter: blur(15px);
+  }
+}
