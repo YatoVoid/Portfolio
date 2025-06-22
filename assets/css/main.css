@@ -234,7 +234,7 @@ input, select, textarea {
 		font-size: 0.6em;
 	}
 
-	@media screen and (max-width: 737px) {
+	@media screen and (max-width: 736px) {
 
 		h1 {
 			font-size: 2em;
@@ -1305,7 +1305,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 737px) {
+		@media screen and (max-width: 736px) {
 
 			.row {
 				display: flex;
@@ -2193,7 +2193,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 737px) {
+		@media screen and (max-width: 736px) {
 
 			.features section {
 				padding: 2.5em 1.5em 0.1em 5.5em ;
@@ -2978,7 +2978,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 737px) {
+		@media screen and (max-width: 736px) {
 
 			.split > * {
 				margin: 3em 0 0 0;
@@ -3114,7 +3114,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 737px) {
+		@media screen and (max-width: 736px) {
 
 			.spotlights > section > .image {
 				height: 50vh;
@@ -3223,7 +3223,7 @@ input, select, textarea {
 
 			}
 
-			@media screen and (max-width: 737px) {
+			@media screen and (max-width: 736px) {
 
 				.wrapper > .inner {
 					padding: 3em 2em 1em 2em ;
@@ -3291,7 +3291,7 @@ input, select, textarea {
 
 			}
 
-			@media screen and (max-width: 737px) {
+			@media screen and (max-width: 736px) {
 
 				.wrapper.fullscreen {
 					padding: 2em 0;
@@ -3421,7 +3421,7 @@ input, select, textarea {
 							color: #ffffff;
 						}
 
-		@media screen and (max-width: 737px) {
+		@media screen and (max-width: 736px) {
 
 			#header {
 				padding: 1em 2em;
@@ -3473,7 +3473,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 737px) {
+		@media screen and (max-width: 736px) {
 
 			#sidebar + #wrapper {
 				padding-top: 0;
@@ -3879,7 +3879,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 737px) {
+		@media screen and (max-width: 736px) {
 
 			#sidebar {
 				display: none;
@@ -3909,7 +3909,7 @@ input, select, textarea {
 
 			}
 
-			@media screen and (max-width: 737px) {
+			@media screen and (max-width: 736px) {
 
 				#intro p {
 					font-size: 1em;
@@ -3999,8 +3999,9 @@ input, select, textarea {
     transition: left 0.3s ease-in-out;
 }
 
+/* mobile sidebar open here */
 #mobileSidebar.open {
-    left: 0;
+    left: 0;	
 }
 
 #mobileSidebar .inner {
@@ -4062,7 +4063,7 @@ input, select, textarea {
 #mobileSidebar nav a:hover::after {
     max-width: 100%;
 }
-/* Burger Animation */
+/* Burger Animation becomes X*/ 
 #mobileToggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -4074,6 +4075,10 @@ input, select, textarea {
 #mobileToggle.active span:nth-child(3) {
   transform: rotate(-45deg) translate(7px, -6px);
 }
+
+
+
+
 /* Default white burger */
 #mobileToggle span {
   background: white;
@@ -4399,7 +4404,7 @@ html {
    
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 736px) {
    
 	.logo-img {
 		
@@ -4408,5 +4413,42 @@ html {
 		align-self: center;
 		
     }
+	
+}
+
+.sticker {
+  position: absolute;
+  right: 0;
+  top:0;
+  width: 100px; /* adjust as needed */
+  height: fit-content;
+  pointer-events: none; /* so it doesn't interfere with clicks */
+  z-index: 1;
+  opacity: 0.25; /* or lower if you want it faint */
+}
+
+
+
+@media screen and (max-width: 1280px) {
+
+    
+}
+
+@media screen and (max-width: 980px) {
+   
+}
+
+@media screen and (max-width: 767px) {
+   
+	.sticker {
+  position: absolute;
+  right: 0;
+  top:0;
+  width: 200px; /* adjust as needed */
+  height: auto;
+  pointer-events: none; /* so it doesn't interfere with clicks */
+  z-index: 1;
+  opacity: 0.7; /* or lower if you want it faint */
+	}
 	
 }

@@ -66,7 +66,9 @@
 
 	<!-- Intro -->
 	<section id="intro" class="wrapper style1 fullscreen fade-up">
+		<img src="images/face-tech.png" alt="TechFace" class="sticker">
 		<div class="inner">
+		
 			<h1>WhaleTale</h1>
 			<p>Наша компания стремится создать замкнутый производственный цикл передовых технологий на территории Азербайджана. Учитывая глобальные трансформации в сегодняшнем мире, мы нацелены на обеспечение самостоятельности Азербайджана в области высоких технологий, снизив зависимость от зарубежных поставщиков.</p>
 			<ul class="actions">
@@ -401,7 +403,11 @@
     document.querySelectorAll('#mobileSidebar nav a').forEach(link => {
         link.addEventListener('click', () => {
             sidebar.classList.remove('open');
+			$mobileToggle.toggleClass('active');
+        	$mobileSidebar.toggleClass('open');
+			sidebar.classList.toggle('open');
         });
+		
     });
 
     // Close sidebar when clicking outside of it
@@ -411,6 +417,9 @@
             const isClickOnToggle = toggle.contains(e.target);
             if (!isClickInsideSidebar && !isClickOnToggle) {
                 sidebar.classList.remove('open');
+				$mobileToggle.toggleClass('active');
+        		$mobileSidebar.toggleClass('open');
+				sidebar.classList.toggle('open');
             }
         }
     });
