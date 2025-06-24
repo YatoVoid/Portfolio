@@ -435,21 +435,21 @@
     });
     
     // Auto-detect background brightness
-    function updateBurgerColor() {
-        const rect = $mobileToggle[0].getBoundingClientRect();
-        const elementBelow = document.elementFromPoint(rect.left + rect.width/2, rect.top + rect.height/2 + 100);
+    // function updateBurgerColor() {
+    //     const rect = $mobileToggle[0].getBoundingClientRect();
+    //     const elementBelow = document.elementFromPoint(rect.left + rect.width/2, rect.top + rect.height/2 + 100);
         
-        if (elementBelow) {
-            const bgColor = window.getComputedStyle(elementBelow).backgroundColor;
-            const brightness = getBrightness(bgColor);
+    //     if (elementBelow) {
+    //         const bgColor = window.getComputedStyle(elementBelow).backgroundColor;
+    //         const brightness = getBrightness(bgColor);
             
-            if (brightness > 128) {
-                $mobileToggle.addClass('dark');
-            } else {
-                $mobileToggle.removeClass('dark');
-            }
-        }
-    }
+    //         if (brightness > 128) {
+    //             $mobileToggle.addClass('dark');
+    //         } else {
+    //             $mobileToggle.removeClass('dark');
+    //         }
+    //     }
+    // }
     
     function getBrightness(color) {
         const rgb = color.match(/\d+/g);
