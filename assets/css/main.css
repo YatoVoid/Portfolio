@@ -116,7 +116,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: rgba(255, 255, 255, 0.55);
-		font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+		font-family: 'Calibri', sans-serif;
 		font-size: 16.5pt;
 		font-weight: normal;
 		line-height: 1.75;
@@ -285,7 +285,7 @@ input, select, textarea {
 		background: rgba(21, 255, 0, 0.05);
 		border-radius: 0.25em;
 		border: solid 1px rgba(255, 174, 0, 0.15);
-		font-family: "Courier New", monospace;
+		font-family: 'Calibri', sans-serif;
 		font-size: 0.9em;
 		margin: 0 0.25em;
 		padding: 0.25em 0.65em;
@@ -293,7 +293,7 @@ input, select, textarea {
 
 	pre {
 		-webkit-overflow-scrolling: touch;
-		font-family: "Courier New", monospace;
+		font-family: 'Calibri', sans-serif;
 		font-size: 0.9em;
 		margin: 0 0 2em 0;
 	}
@@ -2419,7 +2419,7 @@ input, select, textarea {
 				text-rendering: auto;
 				line-height: 1;
 				text-transform: none !important;
-				font-family: 'Font Awesome 5 Free';
+				font-family: 'Calibri', sans-serif;
 				font-weight: 900;
 			}
 
@@ -2501,7 +2501,7 @@ input, select, textarea {
 			text-rendering: auto;
 			line-height: 1;
 			text-transform: none !important;
-			font-family: 'Font Awesome 5 Free';
+			font-family: 'Calibri', sans-serif;
 			font-weight: 400;
 		}
 
@@ -2518,7 +2518,7 @@ input, select, textarea {
 		}
 
 		.icon.brands:before {
-			font-family: 'Font Awesome 5 Brands';
+			font-family: 'Calibri', sans-serif;
 		}
 
 		.icon.major {
@@ -4022,7 +4022,7 @@ input, select, textarea {
 #mobileSidebar nav a {
     display: block;
     position: relative;
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.756);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.25em;
