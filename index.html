@@ -448,8 +448,16 @@ window.addEventListener('scroll', () => {
   const maxScroll = document.body.scrollHeight - window.innerHeight;
   const scrollRatio = scrollTop / maxScroll;
 
-  const opacityBottom = Math.min(scrollRatio, 1);
-  const opacityTop = 1 - opacityBottom;
+ 
+  const startFade = 0.5;
+  const endFade = 0.8;
+
+  
+  let fadeProgress = (scrollRatio - startFade) / (endFade - startFade);
+  fadeProgress = Math.min(Math.max(fadeProgress, 0), 1);
+
+  const opacityBottom = fadeProgress;
+  const opacityTop = 1 - fadeProgress;
 
   topLogos.forEach(logo => {
     logo.style.opacity = opacityTop;
