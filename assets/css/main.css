@@ -4018,7 +4018,7 @@ input, select, textarea {
     margin-bottom: 2em;
 }
 
-/* Desktop-style Nav Link Styling */
+/* Desktop-style Nav Link Styling */ 
 #mobileSidebar nav a {
     display: block;
     position: relative;
@@ -4359,37 +4359,41 @@ html {
 #three .inner > div section:nth-child(5) { animation-delay: 0.5s; }
 #three .inner > div section:nth-child(6) { animation-delay: 0.6s; }
 
-
+.logo-wrapper {
+  position: relative; /* This makes absolute children relative to this */
+  
+}
 
 .logo-img{
 	width: 100%;
 	margin-bottom: 40%;
+	transition: filter 0.3s ease;
+	align-self: center;
 }
 
-
-
-.mobile-logo-container {
-    display: flex;
-    justify-content: center;
-    padding: 1.5rem 0 1rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);  /* Visual separator */
-    margin-bottom: 1rem;
-	
+.top-logo {
+  opacity: 1;
+  z-index: 2;
+   
 }
 
+.bottom-logo {
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  left:0;
+  
+}	
 
-
-/* Responsive adjustments */
 @media screen and (max-width: 1280px) {
 
-    .logo-img {
-		
-        width: 70px;        /* fixed size to avoid logo shrinking too much */
-		/* padding-left: 300px; */
+    .logo-img {	
+        width: 70px;      
     }
 	.nav-img{
-		padding-left: 150px;
+		padding-left: 50px;
 	}
+	
 }
 
 @media screen and (max-width: 980px) {
@@ -4398,13 +4402,12 @@ html {
 
 @media screen and (max-width: 736px) {
    
-	.logo-img {
-		
-        width: 100%;        /* fixed size to avoid logo shrinking too much */
-		/* padding-left: 300px; */
-		align-self: center;
-		
-    }
+	.logo-img{
+	width: 100%;
+	margin-bottom: 40%;
+	transition: filter 0.3s ease;
+	align-self: center;
+}
 	
 }
 
@@ -4412,7 +4415,7 @@ html {
   position: absolute;
   right: 0;
   top:0;
-  width: 100px; /* adjust as needed */
+  width: 450px; /* adjust as needed */
   height: fit-content;
   pointer-events: none; /* so it doesn't interfere with clicks */
   z-index: 1;
@@ -4422,15 +4425,14 @@ html {
 
 
 @media screen and (max-width: 1280px) {
-
-    
+	
 }
 
 @media screen and (max-width: 980px) {
    
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 736px) {
    
 	.sticker {
   position: absolute;

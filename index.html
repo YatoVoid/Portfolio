@@ -21,9 +21,10 @@
 <section id="mobileSidebar" class="mobile_nav">
 
     <div class="inner">
-		<div>
+		<div class="logo-wrapper">
 			<a>  
-				<img class="logo-img" src="images/logo.png" alt="WhaleTale Logo"> 
+				<img src="images/logo.png" class="logo-img top-logo" alt="WhaleTale Logo">
+  				<img src="images/logo-bottom.png" class="logo-img bottom-logo" alt="WhaleTale Logo Light">
 			</a>	
 		</div>	
         <nav>
@@ -43,11 +44,12 @@
 <section id="sidebar" class="desktop_nav">
 	
     <div class="inner">
-		<div>
-			<a>  
-				<img class="logo-img" src="images/logo.png" alt="WhaleTale Logo"> 
-			</a>	
-		</div>
+		<div class="logo-wrapper">
+			 
+			<img src="images/logo.png" class="logo-img top-logo" alt="WhaleTale Logo">
+  			<img src="images/logo-bottom.png" class="logo-img bottom-logo" alt="WhaleTale Logo Light">
+			
+		</div>	
         <nav class="nav-img">	
             <ul>
                 <li><a href="#intro">Welcome</a></li>
@@ -434,34 +436,29 @@
 		sidebar.classList.toggle('open');
     });
     
-    // Auto-detect background brightness
-    // function updateBurgerColor() {
-    //     const rect = $mobileToggle[0].getBoundingClientRect();
-    //     const elementBelow = document.elementFromPoint(rect.left + rect.width/2, rect.top + rect.height/2 + 100);
-        
-    //     if (elementBelow) {
-    //         const bgColor = window.getComputedStyle(elementBelow).backgroundColor;
-    //         const brightness = getBrightness(bgColor);
-            
-    //         if (brightness > 128) {
-    //             $mobileToggle.addClass('dark');
-    //         } else {
-    //             $mobileToggle.removeClass('dark');
-    //         }
-    //     }
-    // }
     
-    function getBrightness(color) {
-        const rgb = color.match(/\d+/g);
-        if (rgb) {
-            return (parseInt(rgb[0]) * 299 + parseInt(rgb[1]) * 587 + parseInt(rgb[2]) * 114) / 1000;
-        }
-        return 0;
-    }
-    
-    // Check on scroll and resize
-    $(window).on('scroll resize', updateBurgerColor);
-    updateBurgerColor(); // Initial check
+
+
+
+	const topLogos = document.querySelectorAll('.top-logo');
+const bottomLogos = document.querySelectorAll('.bottom-logo');
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const maxScroll = document.body.scrollHeight - window.innerHeight;
+  const scrollRatio = scrollTop / maxScroll;
+
+  const opacityBottom = Math.min(scrollRatio, 1);
+  const opacityTop = 1 - opacityBottom;
+
+  topLogos.forEach(logo => {
+    logo.style.opacity = opacityTop;
+  });
+
+  bottomLogos.forEach(logo => {
+    logo.style.opacity = opacityBottom;
+  });
+});
 	
 </script>
 
