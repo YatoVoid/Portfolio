@@ -1,74 +1,677 @@
 <!DOCTYPE HTML>
-
 <html>
-	<head>
-		<title>Generic - Hyperspace by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<head>
+<title>E-Gate - Hyperspace by HTML5 UP</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<style>
+/* Include the existing CSS from your paste.txt file */
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
 
-		<!-- Header -->
-		<header id="learnmore-header">
-			<nav>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li>
-						<a>Our Projects</a>
-						<ul>
-							<li><a href="egate.html" class="active">E-Gate</a></li>
-							<li><a href="thinkid.html">Think-ID</a></li>
-							<li><a href="smartbus.html">Smart-Bus</a></li>
-							<li><a href="ebracelets.html">E-Bracelets</a></li>
-							<li><a href="fingerprint_controller.html">Fingerprint-Controller</a></li>
-							<li><a href="smartglasses.html">Smart-Glasses</a></li>
-							<li><a href="residencemanager.html">Residence-Manager</a></li>
-							<li><a href="flightcontroller.html">Flight-Controller</a></li>
-							<li><a href="epadlock.html">E-Padlock</a></li>
-							<li><a href="busmanager.html">Bus-Manager</a></li>
-						</ul>
-					</li>
-					<li><a href="index.html">Contact Us</a></li>
-				</ul>
-			</nav>
-    	</header>
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+body {
+	line-height: 1;
+}
 
-				<!-- Main -->
-					<section id="main" class="wrapper">
-						<div class="inner">
-							<h1 class="major">E-Gate</h1>
-							<span class="image fit"><img src="images/e-gate.jpeg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-						</div>
-					</section>
+ol, ul {
+	list-style: none;
+}
 
-			</div>
+blockquote, q {
+	quotes: none;
+}
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
-	</body>
+body {
+	-webkit-text-size-adjust: none;
+}
+
+mark {
+	background-color: transparent;
+	color: inherit;
+}
+
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input, select, textarea {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+}
+
+@-ms-viewport {
+	width: device-width;
+}
+
+body {
+	-ms-overflow-style: scrollbar;
+}
+
+@media screen and (max-width: 480px) {
+	html, body {
+		min-width: 320px;
+	}
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	--angle: 45deg; 
+	background: linear-gradient(180deg,rgb(116, 148, 175) 0%, rgb(56, 73, 148) 49%, rgb(3, 3, 34) 91%);
+}
+
+body, input, select, textarea {
+	color: rgba(255, 255, 255, 0.55);
+	font-family: 'Calibri', sans-serif;
+	font-size: 16.5pt;
+	font-weight: normal;
+	line-height: 1.75;
+}
+
+@media screen and (max-width: 1680px) {
+	body, input, select, textarea {
+		font-size: 13pt;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	body, input, select, textarea {
+		font-size: 12pt;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	body, input, select, textarea {
+		font-size: 11pt;
+	}
+}
+
+a {
+	-moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+	-webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+	-ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+	transition: color 0.2s ease, border-bottom-color 0.2s ease;
+	border-bottom: 1px rgba(255, 255, 255, 0.35);
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover {
+	border-bottom-color: transparent;
+	color: #ffffff;
+}
+
+strong, b {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+em, i {
+	font-style: italic;
+}
+
+p {
+	margin: 0 0 2em 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #ffffff;
+	font-weight: bold;
+	line-height: 1.5;
+	margin: 0 0 0.5em 0;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	color: inherit;
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 2.75em;
+}
+
+h1.major {
+	margin: 0 0 1.3em 0;
+	position: relative;
+	padding-bottom: 0.35em;
+}
+
+h1.major:after {
+	background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
+	background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
+	background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
+	background-image: linear-gradient(to right, #5e42a6, #b74e91);
+	-moz-transition: max-width 0.2s ease;
+	-webkit-transition: max-width 0.2s ease;
+	-ms-transition: max-width 0.2s ease;
+	transition: max-width 0.2s ease;
+	border-radius: 0.2em;
+	bottom: 0;
+	content: '';
+	height: 0.05em;
+	position: absolute;
+	right: 0;
+	width: 100%;
+}
+
+h2 {
+	font-size: 1.75em;
+}
+
+h3 {
+	font-size: 1.1em;
+}
+
+h4 {
+	font-size: 1em;
+}
+
+h5 {
+	font-size: 0.8em;
+}
+
+h6 {
+	font-size: 0.6em;
+}
+
+@media screen and (max-width: 736px) {
+	h1 {
+		font-size: 2em;
+	}
+
+	h2 {
+		font-size: 1.25em;
+	}
+
+	h3 {
+		font-size: 1em;
+	}
+
+	h4 {
+		font-size: 0.8em;
+	}
+
+	h5 {
+		font-size: 0.6em;
+	}
+
+	h6 {
+		font-size: 0.6em;
+	}
+}
+
+.wrapper {
+	position: relative;
+}
+
+.wrapper > .inner {
+	padding: 5em 5em 3em 5em;
+	max-width: 100%;
+	width: 75em;
+}
+
+@media screen and (max-width: 1680px) {
+	.wrapper > .inner {
+		padding: 4em 4em 2em 4em;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	.wrapper > .inner {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.wrapper > .inner {
+		padding: 3em 2em 1em 2em;
+	}
+}
+
+#wrapper {
+	position: relative;
+}
+
+#footer {
+	background: rgba(49, 36, 80, 0.2);
+	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(15px);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 2em 0;
+	text-align: center;
+}
+
+#footer .inner {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2em;
+}
+
+#footer .menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#footer .menu li {
+	display: inline-block;
+	margin: 0 1em;
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 0.8em;
+}
+
+#footer .menu li a {
+	color: rgba(255, 255, 255, 0.7);
+	text-decoration: none;
+}
+
+#footer .menu li a:hover {
+	color: #ffffff;
+}
+
+/* Header styles from your existing CSS */
+#learnmore-header {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#learnmore-header .title {
+  display: block;
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#learnmore-header nav {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  width: auto;
+  max-width: calc(100vw - 40px);
+  
+  background: rgba(49, 36, 80, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  filter: saturate(120%);
+  
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 30px;
+  
+  box-shadow: 
+    4px 4px 20px rgba(0, 0, 0, 0.15),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.1),
+    2px 2px 8px rgba(255, 255, 255, 0.08),
+    inset -1px -1px 1px rgba(255, 255, 255, 0.2);
+  
+  animation: slide-in 1s ease-out;
+  z-index: 100;
+}
+
+#learnmore-header nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0 30px;
+  list-style: none;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+#learnmore-header nav ul li:not(:last-child) {
+  margin-right: clamp(10px, 3vw, 40px);
+}
+
+#learnmore-header nav ul li {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: clamp(5px, 1.5vw, 10px);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+#learnmore-header nav ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: clamp(0.4em, 1vw, 0.6em);
+  font-weight: bold;
+  letter-spacing: clamp(0.1em, 0.3vw, 0.25em);
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+}
+
+#learnmore-header nav ul li a.active {
+  color: rgba(255, 255, 255, 1);
+  font-weight: bold;
+}
+
+#learnmore-header nav ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 45px;
+  left: -10px;
+  margin: 0;
+  padding: 10px 0;
+  
+  background: rgba(49, 36, 80, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  filter: saturate(120%);
+  
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.2),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.1),
+    0 4px 12px rgba(255, 255, 255, 0.05);
+  
+  transition: all 0.3s ease;
+  display: block;
+  min-width: 180px;
+  z-index: 999;
+}
+
+#learnmore-header nav ul li ul li {
+  margin: 0;
+  width: 100%;
+  padding: 8px 20px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+#learnmore-header nav ul li ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  display: block;
+  font-size: 0.55em;
+  letter-spacing: 0.2em;
+}
+
+#learnmore-header nav ul li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 15px rgba(0, 0, 0, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+#learnmore-header nav ul li:hover > a {
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+#learnmore-header nav ul li:hover ul {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+#learnmore-header nav ul li:hover ul li {
+  background: transparent;
+}
+
+#learnmore-header nav ul li:hover ul li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+}
+
+#learnmore-header nav ul li:hover ul li a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+#learnmore-header nav ul li:hover ul li:hover a {
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes slide-in {
+  0% {
+    top: -50px;
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  40% {
+    top: 20px;
+    opacity: 0.7;
+  }
+  70% {
+    top: 10px;
+    opacity: 0.9;
+  }
+  100% {
+    top: 15px;
+    opacity: 1;
+    backdrop-filter: blur(15px);
+  }
+}
+
+/* New layout styles for project page */
+.project-layout {
+  display: flex;
+  gap: 3em;
+  align-items: flex-start;
+  margin-top: 2em;
+}
+
+.project-content {
+  flex: 1;
+  max-width: 60%;
+}
+
+.project-content h1.major {
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+.video-container {
+  flex: 0 0 35%;
+  position: relative;
+  
+  /* Glass morphism styling */
+  background: rgba(49, 36, 80, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  filter: saturate(120%);
+  
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  
+  /* Enhanced glass effect with shadows */
+  box-shadow: 
+    4px 4px 20px rgba(0, 0, 0, 0.15),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.1),
+    2px 2px 8px rgba(255, 255, 255, 0.08),
+    inset -1px -1px 1px rgba(255, 255, 255, 0.2);
+  
+  padding: 20px;
+  height: fit-content;
+  min-height: 400px;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.video-placeholder {
+  width: 100%;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2em;
+  text-align: center;
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive design */
+@media screen and (max-width: 1280px) {
+  .project-layout {
+    flex-direction: column;
+    gap: 2em;
+  }
+  
+  .project-content {
+    max-width: 100%;
+  }
+  
+  .video-container {
+    flex: none;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .project-layout {
+    gap: 1.5em;
+  }
+  
+  .video-container {
+    padding: 15px;
+    min-height: 250px;
+  }
+  
+  .video-placeholder {
+    height: 200px;
+    font-size: 1em;
+  }
+}
+</style>
+<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Header -->
+<header id="learnmore-header">
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li>
+<a>Our Projects</a>
+<ul>
+<li><a href="egate.html" class="active">E-Gate</a></li>
+<li><a href="thinkid.html">Think-ID</a></li>
+<li><a href="smartbus.html">Smart-Bus</a></li>
+<li><a href="ebracelets.html">E-Bracelets</a></li>
+<li><a href="fingerprint_controller.html">Fingerprint-Controller</a></li>
+<li><a href="smartglasses.html">Smart-Glasses</a></li>
+<li><a href="residencemanager.html">Residence-Manager</a></li>
+<li><a href="flightcontroller.html">Flight-Controller</a></li>
+<li><a href="epadlock.html">E-Padlock</a></li>
+<li><a href="busmanager.html">Bus-Manager</a></li>
+</ul>
+</li>
+<li><a href="index.html">Contact Us</a></li>
+</ul>
+</nav>
+</header>
+
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Main -->
+<section id="main" class="wrapper">
+<div class="inner">
+<div class="project-layout">
+<!-- Left side: Project content -->
+<div class="project-content">
+<h1 class="major">E-Gate</h1>
+<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
+<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+</div>
+
+<!-- Right side: Video container with glass border -->
+<div class="video-container">
+<!-- Replace this placeholder with your actual video -->
+
+<video controls loop src="/videos/e-gate.mp4" type="video/mp4"> </video>
+
+<!-- 
+Example of how to add your video:
+<video controls>
+<source src="path/to/your/video.mp4" type="video/mp4">
+<source src="path/to/your/video.webm" type="video/webm">
+Your browser does not support the video tag.
+</video>
+-->
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<!-- Footer -->
+<footer id="footer" class="wrapper alt">
+<div class="inner">
+<ul class="menu">
+<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+</ul>
+</div>
+</footer>
+
+<!-- Scripts -->
+<script>
+// Add any necessary JavaScript here
+document.addEventListener('DOMContentLoaded', function() {
+    // Add smooth scrolling or other interactive features if needed
+});
+</script>
+</body>
 </html>
-
-
