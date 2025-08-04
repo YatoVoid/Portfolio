@@ -5,6 +5,18 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -ms-animation: none !important;
+  animation: none !important;
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -3202,7 +3214,7 @@ input, select, textarea {
 	}
 
 		.wrapper > .inner {
-			padding: 5em 5em 3em 5em ;
+			padding: 1em 5em 3em 5em ;
 			max-width: 100%;
 			width: 75em;
 		}
@@ -4647,3 +4659,338 @@ html {
     backdrop-filter: blur(15px);
   }
 }
+
+
+
+
+/* learn more */
+
+#footer {
+	background: rgba(49, 36, 80, 0.2);
+	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(15px);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 2em 0;
+	text-align: center;
+}
+
+#footer .inner {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2em;
+}
+
+#footer .menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#footer .menu li {
+	display: inline-block;
+	margin: 0 1em;
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 0.8em;
+}
+
+#footer .menu li a {
+	color: rgba(255, 255, 255, 0.7);
+	text-decoration: none;
+}
+
+#footer .menu li a:hover {
+	color: #ffffff;
+}
+
+/* Header styles from your existing CSS */
+#learnmore-header {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#learnmore-header .title {
+  display: block;
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#learnmore-header nav {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  width: auto;
+  max-width: calc(100vw - 40px);
+  
+  background: rgba(49, 36, 80, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  filter: saturate(120%);
+  
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 30px;
+  
+  box-shadow: 
+    4px 4px 20px rgba(0, 0, 0, 0.15),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.1),
+    2px 2px 8px rgba(255, 255, 255, 0.08),
+    inset -1px -1px 1px rgba(255, 255, 255, 0.2);
+  
+  animation: slide-in 1s ease-out;
+  z-index: 100;
+}
+
+#learnmore-header nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0 30px;
+  list-style: none;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+#learnmore-header nav ul li:not(:last-child) {
+  margin-right: clamp(10px, 3vw, 40px);
+}
+
+#learnmore-header nav ul li {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: clamp(5px, 1.5vw, 10px);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+#learnmore-header nav ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: clamp(0.4em, 1vw, 0.6em);
+  font-weight: bold;
+  letter-spacing: clamp(0.1em, 0.3vw, 0.25em);
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+}
+
+#learnmore-header nav ul li a.active {
+  color: rgba(255, 255, 255, 1);
+  font-weight: bold;
+}
+
+#learnmore-header nav ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 45px;
+  left: -10px;
+  margin: 0;
+  padding: 10px 0;
+  
+  background: rgba(49, 36, 80, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  filter: saturate(120%);
+  
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.2),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.1),
+    0 4px 12px rgba(255, 255, 255, 0.05);
+  
+  transition: all 0.3s ease;
+  display: block;
+  min-width: 180px;
+  z-index: 999;
+}
+
+#learnmore-header nav ul li ul li {
+  margin: 0;
+  width: 100%;
+  padding: 8px 20px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+#learnmore-header nav ul li ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  display: block;
+  font-size: 0.55em;
+  letter-spacing: 0.2em;
+}
+
+#learnmore-header nav ul li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 15px rgba(0, 0, 0, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+#learnmore-header nav ul li:hover > a {
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+#learnmore-header nav ul li:hover ul {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+#learnmore-header nav ul li:hover ul li {
+  background: transparent;
+}
+
+#learnmore-header nav ul li:hover ul li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+}
+
+#learnmore-header nav ul li:hover ul li a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+#learnmore-header nav ul li:hover ul li:hover a {
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes slide-in {
+  0% {
+    top: -50px;
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  40% {
+    top: 20px;
+    opacity: 0.7;
+  }
+  70% {
+    top: 10px;
+    opacity: 0.9;
+  }
+  100% {
+    top: 15px;
+    opacity: 1;
+    backdrop-filter: blur(15px);
+  }
+}
+
+/* New layout styles for project page */
+.project-layout {
+  display: flex;
+  gap: 3em;
+  align-items: flex-start;
+  margin-top: 2em;
+}
+
+.project-content {
+  flex: 1;
+  max-width: 70%;
+}
+.project-content p{
+  flex: 1;
+  font-size: large;
+  color: rgba(255, 255, 255, 0.753);
+}
+
+.project-content h1.major {
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+.video-container {
+  flex: 0 0 35%;
+  position: relative;
+  
+  /* Glass morphism styling */
+  background: rgba(49, 36, 80, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  filter: saturate(120%);
+  
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  
+  /* Enhanced glass effect with shadows */
+  box-shadow: 
+    4px 4px 20px rgba(0, 0, 0, 0.15),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.1),
+    2px 2px 8px rgba(255, 255, 255, 0.08),
+    inset -1px -1px 1px rgba(255, 255, 255, 0.2);
+  
+  padding: 20px;
+  height: fit-content;
+  min-height: 400px;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.video-placeholder {
+  width: 100%;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2em;
+  text-align: center;
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive design */
+@media screen and (max-width: 1280px) {
+  .project-layout {
+    flex-direction: column;
+    gap: 2em;
+  }
+  
+  .project-content {
+    max-width: 100%;
+  }
+  
+  .video-container {
+    flex: none;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .project-layout {
+    gap: 1.5em;
+  }
+  
+  .video-container {
+    padding: 15px;
+    min-height: 250px;
+  }
+  
+  .video-placeholder {
+    height: 200px;
+    font-size: 1em;
+  }
+}
+
+

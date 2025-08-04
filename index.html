@@ -5,10 +5,15 @@
 		<title>WhaleTale</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<script src="assets/js/preload-fix.js"></script>
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		
+		
 	</head>
-	<body class="is-preload">
+
+	<body class="is-preload preload">
 
 <!-- Burger Icon -->
 <div id="mobileToggle" class="mobile_nav_toggle">
@@ -91,6 +96,7 @@
 									<h2>E-Gate</h2>
 									<p>Это интегрированная система, созданная для того, чтобы сделать пограничный контроль максимально быстрым и автоматизированным.</p>
 									<ul class="actions">
+										<a href="egate.html" class="button" id="egateLearnMore">Learn more</a>
 										<!-- <li><a href="egate.html" class="button">Learn more</a></li> -->
 										<!-- <li><a class="button">Learn more</a></li> -->
 									</ul>
@@ -394,6 +400,9 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 <script>
+	
+
+  
     const toggle = document.getElementById('mobileToggle');
     const sidebar = document.getElementById('mobileSidebar');
 
@@ -467,6 +476,8 @@ window.addEventListener('scroll', () => {
     logo.style.opacity = opacityBottom;
   });
 });
+	
+
 	
 </script>
 
