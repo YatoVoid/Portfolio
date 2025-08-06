@@ -4616,9 +4616,9 @@ html {
   margin: 0;
   padding: 10px 0;
   
-  background: rgba(49, 36, 80, 0.2);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  background: rgba(84, 107, 137, 0.857) ;
+  /* backdrop-filter: blur(15px); */
+  /* -webkit-backdrop-filter: blur(15px); */
   filter: saturate(120%);
   
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -4629,7 +4629,8 @@ html {
     inset -1px -1px 2px rgba(255, 255, 255, 0.1),
     0 4px 12px rgba(255, 255, 255, 0.05);
   
-  transition: all 0.3s ease;
+  /* Ensure backdrop-filter transitions smoothly */
+  transition: all 0.3s ease, backdrop-filter 0.3s ease;
   display: block;
   min-width: 180px;
   z-index: 999;
@@ -4640,6 +4641,12 @@ html {
   width: 100%;
   padding: 8px 20px;
   border-radius: 8px;
+  
+  /* Add backdrop-filter to the transition and set initial state */
+  background: transparent;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  
   transition: all 0.2s ease;
 }
 
@@ -4690,6 +4697,8 @@ html {
   color: rgba(255, 255, 255, 1);
   text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
 }
+
+
 
 @keyframes slide-in {
   0% {
