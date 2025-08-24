@@ -4749,11 +4749,11 @@ html {
   position: relative;
   
   /* Glass morphism styling */
-  background: rgba(49, 36, 80, 0.15);
+  background: rgba(67, 67, 145, 0.15);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  filter: saturate(120%);
-  
+  /* filter: saturate(120%); */
+ 
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 20px;
   
@@ -4775,6 +4775,15 @@ html {
   border-radius: 12px;
   display: block;
 }
+
+.video-container img {
+  width: 190%;        /* oversized intentionally */
+  height: auto;       /* keeps aspect ratio */
+  border-radius: 12px;
+  margin: 0 -45%;     /* crops left/right for framing */
+  display: block;
+}
+
 
 .video-placeholder {
   width: 100%;
