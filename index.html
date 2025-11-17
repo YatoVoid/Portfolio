@@ -475,8 +475,70 @@ window.addEventListener('scroll', () => {
   bottomLogos.forEach(logo => {
     logo.style.opacity = opacityBottom;
   });
+  
 });
 	
+
+// Override scrollex behavior with more responsive detection
+(function() {
+    let ticking = false;
+    const sections = ['#intro', '#one', '#two', '#three', '#four'];
+    
+    function updateActiveNav() {
+        const scrollPos = window.scrollY + (window.innerHeight / 3);
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        
+        // If at the very bottom, force last section to be active
+        if (window.scrollY >= maxScroll - 10) {
+            document.querySelectorAll('#sidebar nav a, #mobileSidebar nav a').forEach(function(link) {
+                if (link.getAttribute('href') === '#four') {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+            ticking = false;
+            return;
+        }
+        
+        let currentSection = null;
+        
+        // Find which section we're currently in
+        sections.forEach(function(id) {
+            const section = document.querySelector(id);
+            if (section) {
+                const top = section.offsetTop;
+                const bottom = top + section.offsetHeight;
+                
+                if (scrollPos >= top && scrollPos < bottom) {
+                    currentSection = id;
+                }
+            }
+        });
+        
+        // Update active class on all nav links
+        document.querySelectorAll('#sidebar nav a, #mobileSidebar nav a').forEach(function(link) {
+            if (link.getAttribute('href') === currentSection) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+        
+        ticking = false;
+    }
+    
+    // Use requestAnimationFrame for smooth, every-frame updates
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(updateActiveNav);
+            ticking = true;
+        }
+    }, { passive: true });
+    
+    // Initial call
+    updateActiveNav();
+})();
 
 	
 </script>
