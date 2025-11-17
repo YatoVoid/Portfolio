@@ -4960,3 +4960,15 @@ html {
   }
 }
 
+
+
+.desktop_nav {
+    width: 0;
+    overflow: hidden;
+}
+.desktop_nav {
+    overflow: hidden !important;
+}
+body {
+    overflow: hidden;
+}
