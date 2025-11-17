@@ -44,6 +44,9 @@
     </div>
 </section>
 
+
+
+
 <!-- Sidebar -->
 
 <section id="sidebar" class="desktop_nav">
@@ -74,12 +77,14 @@
 	<!-- Intro -->
 	<section id="intro" class="wrapper style1 fullscreen fade-up">
 		<img src="images/face-tech.png" alt="TechFace" class="sticker">
-		<div class="inner">
+		<div class="inner">	
+
+			
 		
 			<h1>Whaletale</h1>
 			<p>Наша компания стремится создать замкнутый производственный цикл передовых технологий на территории Азербайджана. Учитывая глобальные трансформации в сегодняшнем мире, мы нацелены на обеспечение самостоятельности Азербайджана в области высоких технологий, снизив зависимость от зарубежных поставщиков.</p>
 			<ul class="actions">
-				<li><a href="#one" class="button scrolly">Learn more</a></li>
+				<li><a href="#intro" class="button scrolly">Learn more</a></li>
 			</ul>
 		</div>
 	</section>
@@ -235,7 +240,7 @@
 								</div>
 							</div>
 						</section>
-						
+	</section>					
 
 	<!-- Two -->
 	<section id="two" class="wrapper style3 fade-up">
@@ -355,7 +360,7 @@
 					<ul class="contact">
 						<li>
 							<h3>Адрес</h3>
-							<span>WhaleTale<br />Rashid Behbudov 55, AF City</span>
+							<span>Whaletale<br />Rashid Behbudov 55, AF City</span>
 						</li>
 						<li>
 							<h3>Электронная почта</h3>
@@ -480,65 +485,6 @@ window.addEventListener('scroll', () => {
 	
 
 // Override scrollex behavior with more responsive detection
-(function() {
-    let ticking = false;
-    const sections = ['#intro', '#one', '#two', '#three', '#four'];
-    
-    function updateActiveNav() {
-        const scrollPos = window.scrollY + (window.innerHeight / 3);
-        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-        
-        // If at the very bottom, force last section to be active
-        if (window.scrollY >= maxScroll - 10) {
-            document.querySelectorAll('#sidebar nav a, #mobileSidebar nav a').forEach(function(link) {
-                if (link.getAttribute('href') === '#four') {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
-            ticking = false;
-            return;
-        }
-        
-        let currentSection = null;
-        
-        // Find which section we're currently in
-        sections.forEach(function(id) {
-            const section = document.querySelector(id);
-            if (section) {
-                const top = section.offsetTop;
-                const bottom = top + section.offsetHeight;
-                
-                if (scrollPos >= top && scrollPos < bottom) {
-                    currentSection = id;
-                }
-            }
-        });
-        
-        // Update active class on all nav links
-        document.querySelectorAll('#sidebar nav a, #mobileSidebar nav a').forEach(function(link) {
-            if (link.getAttribute('href') === currentSection) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-        
-        ticking = false;
-    }
-    
-    // Use requestAnimationFrame for smooth, every-frame updates
-    window.addEventListener('scroll', function() {
-        if (!ticking) {
-            window.requestAnimationFrame(updateActiveNav);
-            ticking = true;
-        }
-    }, { passive: true });
-    
-    // Initial call
-    updateActiveNav();
-})();
 
 	
 </script>

@@ -4848,8 +4848,9 @@ html {
 
 .project-content {
   flex: 1;
-  max-width: 70%;
+  min-width: 0; /* Prevents flex overflow */
 }
+
 .project-content p{
   flex: 1;
   font-size: large;
@@ -4862,19 +4863,18 @@ html {
 }
 
 .video-container {
-  flex: 0 0 35%;
+  flex: 0 1 400px; /* Changed: grow 0, shrink 1, basis 400px */
+  max-width: 450px; /* Added max-width */
+  min-width: 300px; /* Added min-width for smaller tablets */
   position: relative;
   
-  /* Glass morphism styling */
   background: rgba(67, 67, 145, 0.15);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  /* filter: saturate(120%); */
  
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 20px;
   
-  /* Enhanced glass effect with shadows */
   box-shadow: 
     4px 4px 20px rgba(0, 0, 0, 0.15),
     inset -2px -2px 4px rgba(255, 255, 255, 0.1),
@@ -4883,9 +4883,7 @@ html {
   
   padding: 20px;
   height: fit-content;
-  min-height: 400px;
 }
-
 
 .video-container video {
   width: 100%;
@@ -4895,13 +4893,12 @@ html {
 }
 
 .video-container img {
-  width: 190%;        /* oversized intentionally */
-  height: auto;       /* keeps aspect ratio */
+  width: 190%;
+  height: auto;
   border-radius: 12px;
-  margin: 0 -45%;     /* crops left/right for framing */
+  margin: 0 -45%;
   display: block;
 }
-
 
 .video-placeholder {
   width: 100%;
@@ -4918,7 +4915,26 @@ html {
 }
 
 /* Responsive design */
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1280px) and (min-width: 737px) {
+  /* iPad and medium tablets */
+  .project-layout {
+    gap: 2em;
+  }
+  
+  .video-container {
+    flex: 0 1 350px; /* Smaller on tablets */
+    max-width: 380px;
+    min-width: 280px;
+    padding: 15px;
+  }
+  
+  .video-placeholder {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  /* Phones - keep your existing layout */
   .project-layout {
     flex-direction: column;
     gap: 2em;
@@ -4932,18 +4948,9 @@ html {
     flex: none;
     width: 100%;
     max-width: 500px;
+    min-width: auto;
     margin: 0 auto;
-  }
-}
-
-@media screen and (max-width: 736px) {
-  .project-layout {
-    gap: 1.5em;
-  }
-  
-  .video-container {
     padding: 15px;
-    min-height: 250px;
   }
   
   .video-placeholder {
@@ -4951,5 +4958,3 @@ html {
     font-size: 1em;
   }
 }
-
-
