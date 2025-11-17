@@ -3482,6 +3482,29 @@ input, select, textarea {
 
 /* Wrapper (main) */
 
+/* Active state styling - visible on mobile */
+#sidebar nav a.active,
+#mobileSidebar nav a.active {
+    color: #ffffff !important;
+}
+
+#sidebar nav a.active:after,
+#mobileSidebar nav a.active:after {
+    max-width: 100% !important;
+}
+
+/* Make sure the gradient line shows on mobile */
+@media screen and (max-width: 736px) {
+    #mobileSidebar nav a.active {
+        color: rgba(255, 255, 255, 1) !important;
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    }
+    
+    #mobileSidebar nav a.active:after {
+        max-width: 100% !important;
+    }
+}
+
 	#sidebar + #wrapper {
 		margin-left: 18em;
 	}
