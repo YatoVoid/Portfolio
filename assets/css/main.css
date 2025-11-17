@@ -109,9 +109,19 @@ input, select, textarea {
 	}
 
 	body {
-		--angle: 45deg; 
-		background: linear-gradient(180deg,rgb(116, 148, 175) 0%, rgb(56, 73, 148) 49%, rgb(3, 3, 34) 91%);
-	}
+    --angle: 45deg; 
+    background: linear-gradient(180deg, 
+        rgba(28, 140, 189, 0.753) 0%,      /* #19546d */
+        rgb(13.7%, 56.9%, 75.3%) 25%,    /* #2391c0 */
+        rgb(5.1%, 29.0%, 50.2%) 50%,     /* #0D4A80 */
+        rgb(7, 31, 63) 75%,     /* #0A2F5E */
+        rgb(2, 11, 26) 100%      /* #031127 */
+    );
+    min-height: 100vh;
+    background-attachment: scroll;
+}
+
+
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
@@ -4376,6 +4386,30 @@ html {
   
 }
 
+/* Fix logo alignment on mobile */
+@media screen and (max-width: 736px) {
+    .logo-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .bottom-logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: 1;
+    }
+    
+    .top-logo {
+        opacity: 1;
+        z-index: 2;
+        position: relative;
+    }
+}
+
 .logo-img{
 	width: 100%;
 	margin-bottom: 40%;
@@ -4531,6 +4565,66 @@ html {
   margin-top: 40px;
 }
 
+/* Mobile fix - bigger text */
+@media screen and (max-width: 736px) {
+  #learnmore-header nav ul li a {
+    font-size: 0.65em !important;
+  }
+  
+  #learnmore-header nav ul li ul li a {
+    font-size: 0.6em !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #learnmore-header nav ul li a {
+    font-size: 0.6em !important;
+  }
+  
+  #learnmore-header nav ul li {
+    padding: 6px 10px;
+  }
+  
+  #learnmore-header nav ul {
+    padding: 0 15px;
+    gap: 5px;
+  }
+}
+
+/* Very small screens - scale down if needed */
+@media screen and (max-width: 400px) {
+  #learnmore-header nav {
+    max-width: 98vw;
+  }
+  
+  #learnmore-header nav ul {
+    padding: 0 10px;
+    gap: 4px;
+  }
+  
+  #learnmore-header nav ul li {
+    padding: 6px 8px;
+    margin-right: 4px !important;
+  }
+  
+  #learnmore-header nav ul li a {
+    font-size: 0.55em !important;
+    letter-spacing: 0.08em;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  #learnmore-header nav ul li a {
+    font-size: 0.5em !important;
+    letter-spacing: 0.06em;
+  }
+  
+  #learnmore-header nav ul li {
+    padding: 5px 6px;
+    margin-right: 3px !important;
+  }
+}
+
 #learnmore-header .title {
   display: block;
   font-size: 28px;
@@ -4585,7 +4679,7 @@ html {
   position: relative;
   border: 2px solid transparent;
   border-radius: 8px;
-  padding: clamp(5px, 1.5vw, 10px);
+  padding: clamp(1em, 1.5vw, 10px);
   transition: all 0.3s ease;
   flex-shrink: 0;
 }
@@ -4768,6 +4862,7 @@ html {
   height: fit-content;
   min-height: 400px;
 }
+
 
 .video-container video {
   width: 100%;
