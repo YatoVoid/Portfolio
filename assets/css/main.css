@@ -4602,7 +4602,7 @@ html {
 
 @media screen and (max-width: 480px) {
   #learnmore-header nav ul li a {
-    font-size: 0.6em !important;
+    font-size: 0.54em !important;
   }
   
   #learnmore-header nav ul li {
@@ -4632,14 +4632,14 @@ html {
   }
   
   #learnmore-header nav ul li a {
-    font-size: 0.55em !important;
+    font-size: 0.45em !important;
     letter-spacing: 0.08em;
   }
 }
 
 @media screen and (max-width: 370px) {
   #learnmore-header nav ul li a {
-    font-size: 0.5em !important;
+    font-size: 0.4em !important;
     letter-spacing: 0.06em;
   }
   
@@ -4969,3 +4969,6 @@ html {
 .desktop_nav {
     overflow: hidden !important;
 }
+
+
+
