@@ -46,6 +46,10 @@
 
 <!-- Mobile drawer -->
 <div class="drawer">
+	<div class="drawer-brand">
+		<img src="images/logo-new.png" alt="WhaleTale" />
+		<span>WhaleTale</span>
+	</div>
 	<a href="#home" data-en="Home" data-ru="Главная">Главная</a>
 	<a href="#projects" data-en="Projects" data-ru="Проекты">Проекты</a>
 	<a href="#services" data-en="What We Do" data-ru="Что мы делаем">Что мы делаем</a>
@@ -59,7 +63,6 @@
 	<header id="home" class="hero wrap">
 		<div class="hero-grid">
 			<div>
-				<span class="hero-badge glass"><span class="dot"></span><span data-en="Engineering from Azerbaijan" data-ru="Инженерия из Азербайджана">Инженерия из Азербайджана</span></span>
 				<h1><span class="gradient-text">WhaleTale</span><br><span data-en="We engineer what others import." data-ru="Создаём то, что другие импортируют.">Создаём то, что другие импортируют.</span></h1>
 				<p class="lead" data-en="We build a closed production cycle of advanced technologies in Azerbaijan — from the first sketch and custom PCB to a deployed product. Biometrics, security, transport and infrastructure systems, all under one roof." data-ru="Мы строим замкнутый производственный цикл передовых технологий в Азербайджане — от первого эскиза и собственной печатной платы до готового продукта. Биометрия, безопасность, транспортные и инфраструктурные системы — всё под одной крышей.">Мы строим замкнутый производственный цикл передовых технологий в Азербайджане — от первого эскиза и собственной печатной платы до готового продукта. Биометрия, безопасность, транспортные и инфраструктурные системы — всё под одной крышей.</p>
 				<div class="hero-cta">
@@ -69,7 +72,7 @@
 			</div>
 			<div class="hero-visual">
 				<div class="hero-orb">
-					<img src="images/face-tech.png" alt="WhaleTale technology" />
+					<img src="images/logo-new.png" alt="WhaleTale" style="width:52%; opacity:0.92; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.5)) brightness(1.15);" />
 				</div>
 			</div>
 		</div>
@@ -112,7 +115,7 @@
 			<a href="egate.html" class="proj-card glass reveal">
 				<div class="proj-media">
 					<span class="proj-tag live" data-en="Live demo" data-ru="Видео">Видео</span>
-					<video autoplay loop muted playsinline preload="metadata" poster="images/e-gate.png">
+					<video autoplay loop muted playsinline preload="metadata" poster="images/e-gate.png" style="object-position: center center;">
 						<source src="videos/e-gate-test-1.mp4" type="video/mp4">
 					</video>
 				</div>
@@ -186,7 +189,7 @@
 			<a href="residencemanager.html" class="proj-card glass reveal">
 				<div class="proj-media">
 					<span class="proj-tag" data-en="Infrastructure" data-ru="Инфраструктура">Инфраструктура</span>
-					<img src="images/residenceManagementSystem-complete.png" alt="Residence Manager" loading="lazy" />
+					<img src="images/residenceManagementSystem-complete.png" alt="Residence Manager" loading="lazy" style="object-position: top center;" />
 				</div>
 				<div class="proj-body">
 					<h3>Residence Manager</h3>
@@ -212,7 +215,7 @@
 			<a href="epadlock.html" class="proj-card glass reveal d2">
 				<div class="proj-media">
 					<span class="proj-tag" data-en="Logistics" data-ru="Логистика">Логистика</span>
-					<img src="images/e-lock-complete.png" alt="E-Padlock" loading="lazy" />
+					<img src="images/e-lock-complete.png" alt="E-Padlock" loading="lazy" style="object-position: center 20%;" />
 				</div>
 				<div class="proj-body">
 					<h3>E-Padlock</h3>
@@ -346,21 +349,27 @@
 			<div class="contact-card glass reveal d1">
 				<ul class="info-list">
 					<li>
-						<div class="ic">📍</div>
+						<div class="ic">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+</div>
 						<div>
 							<h4 data-en="Address" data-ru="Адрес">Адрес</h4>
 							<span>10e Babak Ave, Rusel Plaza,<br>AZ1025 Baku, Azerbaijan</span>
 						</div>
 					</li>
 					<li>
-						<div class="ic">✉️</div>
+						<div class="ic">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+</div>
 						<div>
 							<h4 data-en="Email" data-ru="Почта">Почта</h4>
 							<a href="mailto:contact@whaletale.tech">contact@whaletale.tech</a>
 						</div>
 					</li>
 					<li>
-						<div class="ic">📞</div>
+						<div class="ic">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.29h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.29 6.29l.54-.54a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"/></svg>
+</div>
 						<div>
 							<h4 data-en="Phone" data-ru="Телефон">Телефон</h4>
 							<a href="tel:+994502757930">+994 50 275 79 30</a>
