@@ -1,120 +1,97 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-<title>Flight-Controller - Hyperspace by HTML5 UP</title>
-<script src="assets/js/preload-fix.js"></script>
-<link rel="stylesheet" href="assets/css/main.css" />
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-
-<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<meta charset="utf-8" />
+	<title>Flight Controller — WhaleTale</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" href="images/logo-new.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/css/whaletale.css" />
 </head>
-<body class="is-preload preload">
-  <div id="page-transition" style="
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: white;
-  z-index: 9999;
-  display: none;
-  transition: opacity 0.5s ease;
-  opacity: 0;
-"></div>
+<body>
 
-<!-- Header -->
-<header id="learnmore-header">
-<nav>
-<ul>
-<li><a href="index.html" data-en="Home" data-ru="Главная">Главная</a></li>
-<li>
-<a onclick="void(0)" data-en="Our Projects" data-ru="Наши проекты">Наши проекты</a>
-<ul>
-<li><a href="egate.html" class="active">E-Gate</a></li>
-<li><a href="thinkid.html">Think-ID</a></li>
-<li><a href="smartbus.html">Smart-Bus</a></li>
-<li><a href="ebracelets.html">E-Bracelets</a></li>
-<li><a href="fingerprint_controller.html">Fingerprint-Controller</a></li>
-<li><a href="smartglasses.html">Smart-Glasses</a></li>
-<li><a href="residencemanager.html">Residence-Manager</a></li>
-<li><a href="flightcontroller.html">Flight-Controller</a></li>
-<li><a href="epadlock.html">E-Padlock</a></li>
-<li><a href="busmanager.html">Bus-Manager</a></li>
-</ul>
-</li>
-<li><a href="index.html" data-en="Contact Us" data-ru="Связаться">Связаться</a></li>
-</ul>
+<div class="ocean-fx" aria-hidden="true">
+	<div class="rays"></div>
+	<div class="glow one"></div>
+	<div class="glow two"></div>
+	<div class="bubbles"></div>
+</div>
+
+<nav class="nav glass">
+	<a href="index.html" class="brand">
+		<img src="images/logo-new.png" alt="WhaleTale" />
+		<span>WhaleTale</span>
+	</a>
+	<ul class="nav-links">
+		<li><a href="index.html" data-en="Home" data-ru="Главная">Главная</a></li>
+		<li><a href="index.html#projects" data-en="Projects" data-ru="Проекты">Проекты</a></li>
+		<li><a href="index.html#services" data-en="What We Do" data-ru="Что мы делаем">Что мы делаем</a></li>
+		<li><a href="index.html#contact" data-en="Contact" data-ru="Контакты">Контакты</a></li>
+	</ul>
+	<div class="nav-right">
+		<div class="lang" data-lang="ru">
+			<span class="pill"></span>
+			<button data-l="en" onclick="setLang('en')">EN</button>
+			<button data-l="ru" onclick="setLang('ru')" class="active">RU</button>
+		</div>
+		<div class="burger" aria-label="Menu"><span></span><span></span><span></span></div>
+	</div>
 </nav>
-</header>
 
-<!-- Wrapper -->
-<div id="wrapper">
-<!-- Main -->
-<section id="main" class="wrapper fade-up">
-<div class="inner">
-<div class="project-layout">
-<!-- Left side: Project content -->
-<div class="project-content">
-<h1>Flight Controller</h1>
-<p data-en="Flight Controller is a universal proprietary controller for unmanned vehicle control, combining original PCB architecture, high-performance processor, and integrated sensors. The modular design includes gyroscopes, accelerometers, magnetometers, and GPS module, providing precise real-time positioning and orientation. IP67-rated protected housing guarantees operation in extreme conditions. The system is programmed through an intuitive development environment with a rich function library and built-in diagnostic tools. Autopilot algorithms support autonomous flights, obstacle avoidance, automatic return to base, and multiple control modes - from manual to fully autonomous. The safety system includes emergency landing in case of failures, and telemetry is recorded for subsequent analysis." data-ru="Flight Controller — это универсальный контроллер собственного проектирования для управления беспилотными аппаратами, объединяющий оригинальную архитектуру печатной платы, высокопроизводительный процессор и интегрированные датчики. Модульная конструкция включает гироскопы, акселерометры, магнитометры и GPS-модуль, обеспечивающие точное позиционирование и ориентацию в реальном времени. Защищенный корпус стандарта IP67 гарантирует работу в экстремальных условиях. Система программируется через интуитивную среду разработки с богатой библиотекой функций и встроенными диагностическими инструментами. Алгоритмы автопилота поддерживают автономные полеты, облет препятствий, автоматическое возвращение на базу и множественные режимы управления — от ручного до полностью автономного. Система безопасности включает аварийное приземление при сбоях, а телеметрия записывается для последующего анализа.">Flight Controller — это универсальный контроллер собственного проектирования для управления беспилотными аппаратами, объединяющий оригинальную архитектуру печатной платы, высокопроизводительный процессор и интегрированные датчики. Модульная конструкция включает гироскопы, акселерометры, магнитометры и GPS-модуль, обеспечивающие точное позиционирование и ориентацию в реальном времени. Защищенный корпус стандарта IP67 гарантирует работу в экстремальных условиях. Система программируется через интуитивную среду разработки с богатой библиотекой функций и встроенными диагностическими инструментами. Алгоритмы автопилота поддерживают автономные полеты, облет препятствий, автоматическое возвращение на базу и множественные режимы управления — от ручного до полностью автономного. Система безопасности включает аварийное приземление при сбоях, а телеметрия записывается для последующего анализа.</p>
-<p data-en="The controller's versatility enables applications from light civilian quadcopters to heavy defense drones. The system scales for various motor configurations and payload. Civilian applications include aerial photography, agricultural monitoring, and search and rescue operations, while military versions support reconnaissance, patrolling, and cargo delivery. Support for integration with cameras, sensors, and communication equipment makes Flight Controller an advanced solution with maximum adaptability, reliability, and performance for any unmanned aviation tasks." data-ru="Универсальность контроллера обеспечивает применение от легких гражданских квадрокоптеров до тяжелых беспилотников оборонного назначения. Система масштабируется под различные конфигурации двигателей и полезной нагрузки. Гражданские применения охватывают аэрофотосъемку, мониторинг сельского хозяйства и поисково-спасательные операции, военные версии — разведку, патрулирование и доставку грузов. Поддержка интеграции с камерами, сенсорами и коммуникационным оборудованием делает Flight Controller передовым решением с максимальной адаптивностью, надежностью и производительностью для любых задач беспилотной авиации.">Универсальность контроллера обеспечивает применение от легких гражданских квадрокоптеров до тяжелых беспилотников оборонного назначения. Система масштабируется под различные конфигурации двигателей и полезной нагрузки. Гражданские применения охватывают аэрофотосъемку, мониторинг сельского хозяйства и поисково-спасательные операции, военные версии — разведку, патрулирование и доставку грузов. Поддержка интеграции с камерами, сенсорами и коммуникационным оборудованием делает Flight Controller передовым решением с максимальной адаптивностью, надежностью и производительностью для любых задач беспилотной авиации.</p>
-<!-- <p>Операционная эффективность проявляется в увеличении пропускной способности и сокращении времени обработки пассажиров. Система снижает нагрузку на персонал пограничных служб и минимизирует человеческий фактор в принятии решений. Безопасность повышается до 99.9% точности идентификации с улучшенным выявлением нарушителей. Создается цифровой след всех пересечений границы для последующего анализа. Экономические выгоды включают сокращение расходов на персонал и повышение пропускной способности без расширения инфраструктуры. Снижаются риски мошенничества и улучшается качество обслуживания пассажиров. Система применяется в международных аэропортах, морских портах, автомобильных пограничных переходах и на железнодорожных вокзалах. E-Gate обеспечивает оптимальный баланс между безопасностью, эффективностью и удобством использования для всех участников процесса.</p> -->
+<div class="drawer">
+	<a href="index.html" data-en="Home" data-ru="Главная">Главная</a>
+	<a href="index.html#projects" data-en="Projects" data-ru="Проекты">Проекты</a>
+	<a href="index.html#services" data-en="What We Do" data-ru="Что мы делаем">Что мы делаем</a>
+	<a href="index.html#contact" data-en="Contact" data-ru="Контакты">Контакты</a>
 </div>
 
-<!-- Right side: Video container with glass border -->
-<div class="video-container">
-<!-- Replace this placeholder with your actual video -->
+<div class="shell">
+	<section class="detail wrap">
+		<a href="index.html#projects" class="detail-back"><span class="arrow">←</span> <span data-en="All projects" data-ru="Все проекты">Все проекты</span></a>
 
-<video autoplay loop muted playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" src="/videos/droneFly.mp4" type="video/mp4"> </video>
+		<div class="detail-grid">
+			<div class="detail-copy reveal">
+				<span class="eyebrow" data-en="UAV" data-ru="БПЛА">БПЛА</span>
+				<h1>Flight Controller</h1>
+				<p data-en="Flight Controller is a universal proprietary controller for unmanned vehicle control, combining original PCB architecture, high-performance processor, and integrated sensors. The modular design includes gyroscopes, accelerometers, magnetometers, and GPS module, providing precise real-time positioning and orientation. IP67-rated protected housing guarantees operation in extreme conditions. The system is programmed through an intuitive development environment with a rich function library and built-in diagnostic tools. Autopilot algorithms support autonomous flights, obstacle avoidance, automatic return to base, and multiple control modes - from manual to fully autonomous. The safety system includes emergency landing in case of failures, and telemetry is recorded for subsequent analysis." data-ru="Flight Controller — это универсальный контроллер собственного проектирования для управления беспилотными аппаратами, объединяющий оригинальную архитектуру печатной платы, высокопроизводительный процессор и интегрированные датчики. Модульная конструкция включает гироскопы, акселерометры, магнитометры и GPS-модуль, обеспечивающие точное позиционирование и ориентацию в реальном времени. Защищенный корпус стандарта IP67 гарантирует работу в экстремальных условиях. Система программируется через интуитивную среду разработки с богатой библиотекой функций и встроенными диагностическими инструментами. Алгоритмы автопилота поддерживают автономные полеты, облет препятствий, автоматическое возвращение на базу и множественные режимы управления — от ручного до полностью автономного. Система безопасности включает аварийное приземление при сбоях, а телеметрия записывается для последующего анализа.">Flight Controller — это универсальный контроллер собственного проектирования для управления беспилотными аппаратами, объединяющий оригинальную архитектуру печатной платы, высокопроизводительный процессор и интегрированные датчики. Модульная конструкция включает гироскопы, акселерометры, магнитометры и GPS-модуль, обеспечивающие точное позиционирование и ориентацию в реальном времени. Защищенный корпус стандарта IP67 гарантирует работу в экстремальных условиях. Система программируется через интуитивную среду разработки с богатой библиотекой функций и встроенными диагностическими инструментами. Алгоритмы автопилота поддерживают автономные полеты, облет препятствий, автоматическое возвращение на базу и множественные режимы управления — от ручного до полностью автономного. Система безопасности включает аварийное приземление при сбоях, а телеметрия записывается для последующего анализа.</p>
+				<p data-en="The controller's versatility enables applications from light civilian quadcopters to heavy defense drones. The system scales for various motor configurations and payload. Civilian applications include aerial photography, agricultural monitoring, and search and rescue operations, while military versions support reconnaissance, patrolling, and cargo delivery. Support for integration with cameras, sensors, and communication equipment makes Flight Controller an advanced solution with maximum adaptability, reliability, and performance for any unmanned aviation tasks." data-ru="Универсальность контроллера обеспечивает применение от легких гражданских квадрокоптеров до тяжелых беспилотников оборонного назначения. Система масштабируется под различные конфигурации двигателей и полезной нагрузки. Гражданские применения охватывают аэрофотосъемку, мониторинг сельского хозяйства и поисково-спасательные операции, военные версии — разведку, патрулирование и доставку грузов. Поддержка интеграции с камерами, сенсорами и коммуникационным оборудованием делает Flight Controller передовым решением с максимальной адаптивностью, надежностью и производительностью для любых задач беспилотной авиации.">Универсальность контроллера обеспечивает применение от легких гражданских квадрокоптеров до тяжелых беспилотников оборонного назначения. Система масштабируется под различные конфигурации двигателей и полезной нагрузки. Гражданские применения охватывают аэрофотосъемку, мониторинг сельского хозяйства и поисково-спасательные операции, военные версии — разведку, патрулирование и доставку грузов. Поддержка интеграции с камерами, сенсорами и коммуникационным оборудованием делает Flight Controller передовым решением с максимальной адаптивностью, надежностью и производительностью для любых задач беспилотной авиации.</p>
+			</div>
 
-<!-- 
-Example of how to add your video:
-<video controls>
-<source src="path/to/your/video.mp4" type="video/mp4">
-<source src="path/to/your/video.webm" type="video/webm">
-Your browser does not support the video tag.
-</video>
--->
-</div>
-</div>
-</div>
-</section>
+			<div class="detail-media glass reveal d1">
+				<video autoplay loop muted playsinline preload="metadata" poster="images/flightController-complete.png">
+					<source src="videos/droneFly.mp4" type="video/mp4">
+				</video>
+			</div>
+		</div>
+
+		<nav class="detail-nav">
+			<a href="egate.html">E-Gate</a>
+			<a href="thinkid.html">Think-ID</a>
+			<a href="smartbus.html">Smart Bus</a>
+			<a href="ebracelets.html">E-Bracelets</a>
+			<a href="fingerprint_controller.html">Fingerprint Controller</a>
+			<a href="smartglasses.html">Smart Glasses</a>
+			<a href="residencemanager.html">Residence Manager</a>
+			<a href="flightcontroller.html" class="active">Flight Controller</a>
+			<a href="epadlock.html">E-Padlock</a>
+			<a href="busmanager.html">Bus Manager</a>
+		</nav>
+	</section>
 </div>
 
-<!-- Footer -->
-<footer id="footer" class="wrapper alt">
-<div class="inner">
-<ul class="menu">
-<li data-en="© Untitled. All rights reserved." data-ru="© Untitled. Все права защищены.">&copy; Untitled. Все права защищены.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-</ul>
-</div>
+<footer class="footer wrap">
+	<div class="footer-inner glass">
+		<div class="brand"><img src="images/logo-new-bottom.png" alt="WhaleTale" /><span>WhaleTale</span></div>
+		<div class="footer-links">
+			<a href="index.html#projects" data-en="Projects" data-ru="Проекты">Проекты</a>
+			<a href="index.html#contact" data-en="Contact" data-ru="Контакты">Контакты</a>
+		</div>
+		<div class="copy" data-en="© 2025 WhaleTale. All rights reserved." data-ru="© 2025 WhaleTale. Все права защищены.">© 2025 WhaleTale. Все права защищены.</div>
+	</div>
 </footer>
 
-<!-- Scripts -->
-<script>
-// Add any necessary JavaScript here
-document.addEventListener('DOMContentLoaded', function() {
-    // Add smooth scrolling or other interactive features if needed
-});
-</script>
-
-<script>
-function setLang(lang) {
-  // Find all elements with translation data
-  document.querySelectorAll('[data-en][data-ru]').forEach(element => {
-    element.textContent = element.getAttribute('data-' + lang);
-  });
-  
-  // Save preference
-  localStorage.setItem('language', lang);
-}
-
-// Load saved language on page load
-window.addEventListener('DOMContentLoaded', () => {
-  const savedLang = localStorage.getItem('language') || 'ru';
-  if (savedLang === 'en') setLang('en');
-});
-</script>
-
+<script src="assets/js/whaletale.js"></script>
 </body>
 </html>

@@ -1,118 +1,95 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-<title>E-Gate - Hyperspace by HTML5 UP</title>
-<script src="assets/js/preload-fix.js"></script>
-<link rel="stylesheet" href="assets/css/main.css" />
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-
-<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<meta charset="utf-8" />
+	<title>Think-ID — WhaleTale</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" href="images/logo-new.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/css/whaletale.css" />
 </head>
-<body class="is-preload preload">
-  <div id="page-transition" style="
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: white;
-  z-index: 9999;
-  display: none;
-  transition: opacity 0.5s ease;
-  opacity: 0;
-"></div>
+<body>
 
-<!-- Header -->
-<header id="learnmore-header">
-<nav>
-<ul>
-<li><a href="index.html" data-en="Home" data-ru="Главная">Главная</a></li>
-<li>
-<a onclick="void(0)" data-en="Our Projects" data-ru="Наши проекты">Наши проекты</a>
-<ul>
-<li><a href="egate.html" class="active">E-Gate</a></li>
-<li><a href="thinkid.html">Think-ID</a></li>
-<li><a href="smartbus.html">Smart-Bus</a></li>
-<li><a href="ebracelets.html">E-Bracelets</a></li>
-<li><a href="fingerprint_controller.html">Fingerprint-Controller</a></li>
-<li><a href="smartglasses.html">Smart-Glasses</a></li>
-<li><a href="residencemanager.html">Residence-Manager</a></li>
-<li><a href="flightcontroller.html">Flight-Controller</a></li>
-<li><a href="epadlock.html">E-Padlock</a></li>
-<li><a href="busmanager.html">Bus-Manager</a></li>
-</ul>
-</li>
-<li><a href="index.html" data-en="Contact Us" data-ru="Связаться">Связаться</a></li>
-</ul>
+<div class="ocean-fx" aria-hidden="true">
+	<div class="rays"></div>
+	<div class="glow one"></div>
+	<div class="glow two"></div>
+	<div class="bubbles"></div>
+</div>
+
+<nav class="nav glass">
+	<a href="index.html" class="brand">
+		<img src="images/logo-new.png" alt="WhaleTale" />
+		<span>WhaleTale</span>
+	</a>
+	<ul class="nav-links">
+		<li><a href="index.html" data-en="Home" data-ru="Главная">Главная</a></li>
+		<li><a href="index.html#projects" data-en="Projects" data-ru="Проекты">Проекты</a></li>
+		<li><a href="index.html#services" data-en="What We Do" data-ru="Что мы делаем">Что мы делаем</a></li>
+		<li><a href="index.html#contact" data-en="Contact" data-ru="Контакты">Контакты</a></li>
+	</ul>
+	<div class="nav-right">
+		<div class="lang" data-lang="ru">
+			<span class="pill"></span>
+			<button data-l="en" onclick="setLang('en')">EN</button>
+			<button data-l="ru" onclick="setLang('ru')" class="active">RU</button>
+		</div>
+		<div class="burger" aria-label="Menu"><span></span><span></span><span></span></div>
+	</div>
 </nav>
-</header>
 
-<!-- Wrapper -->
-<div id="wrapper">
-<!-- Main -->
-<section id="main" class="wrapper fade-up">
-<div class="inner">
-<div class="project-layout">
-<!-- Left side: Project content -->
-<div class="project-content">
-<h1>Think-ID</h1>
-<p data-en="Think-ID is a high-tech terminal for comprehensive biometric data collection during identity document processing. The system is equipped with a professional high-resolution camera with autofocus, automatic lighting correction and background replacement, a multispectral fingerprint scanner with anti-spoofing protection, and a tablet for signature capture with registration of dynamic writing characteristics. The software uses machine learning algorithms for data analysis and quality control, allowing accurate capture of facial images and a complete set of fingerprints with a high level of reliability. All data is protected by end-to-end encryption and digital signature, access auditing is provided, and automatic memory clearing is performed after completion." data-ru="Think-ID представляет собой высокотехнологичный терминал для комплексного сбора биометрических данных при оформлении удостоверений личности. Система оснащена профессиональной камерой высокого разрешения с автофокусировкой, автоматической коррекцией освещения и заменой фона, многоспектральным дактилоскопическим сканером с защитой от подделок, а также планшетом для захвата подписи с регистрацией динамических характеристик написания. Программное обеспечение использует алгоритмы машинного обучения для анализа и контроля качества данных, что позволяет точно фиксировать изображения лица и полный набор отпечатков пальцев с высоким уровнем достоверности. Все данные защищаются сквозным шифрованием и цифровой подписью, обеспечивается аудит доступа и автоматическая очистка памяти после завершения работы.">Think-ID представляет собой высокотехнологичный терминал для комплексного сбора биометрических данных при оформлении удостоверений личности. Система оснащена профессиональной камерой высокого разрешения с автофокусировкой, автоматической коррекцией освещения и заменой фона, многоспектральным дактилоскопическим сканером с защитой от подделок, а также планшетом для захвата подписи с регистрацией динамических характеристик написания. Программное обеспечение использует алгоритмы машинного обучения для анализа и контроля качества данных, что позволяет точно фиксировать изображения лица и полный набор отпечатков пальцев с высоким уровнем достоверности. Все данные защищаются сквозным шифрованием и цифровой подписью, обеспечивается аудит доступа и автоматическая очистка памяти после завершения работы.</p>
-<p data-en="The compact design of the device fits into a standard transport case and supports autonomous operation for up to 8 hours with quick deployment in 5 minutes. The system is resistant to climatic conditions from -10°C to +40°C and has an IP65 protection rating, making it convenient for mobile scenarios, including medical facilities and remote settlements. Think-ID integrates with government databases, automatically verifies document authenticity, pre-fills forms and reduces errors, cutting application processing time by 3-4 times. Process standardization ensures consistent service quality, while regular updates and equipment calibration maintain high levels of reliability and information security." data-ru="Компактная конструкция устройства помещается в стандартный транспортировочный кейс и поддерживает автономную работу до 8 часов с быстрым развертыванием за 5 минут. Система устойчива к климатическим условиям от -10°C до +40°C и имеет степень защиты IP65, что делает её удобной для выездных сценариев, включая медицинские учреждения и удалённые населённые пункты. Think-ID интегрируется с государственными базами данных, автоматически проверяет подлинность документов, предзаполняет анкеты и снижает количество ошибок, сокращая время обработки заявлений в 3–4 раза. Стандартизация процессов обеспечивает единое качество обслуживания, а регулярные обновления и калибровка оборудования поддерживают высокий уровень надёжности и информационной безопасности.">Компактная конструкция устройства помещается в стандартный транспортировочный кейс и поддерживает автономную работу до 8 часов с быстрым развертыванием за 5 минут. Система устойчива к климатическим условиям от -10°C до +40°C и имеет степень защиты IP65, что делает её удобной для выездных сценариев, включая медицинские учреждения и удалённые населённые пункты. Think-ID интегрируется с государственными базами данных, автоматически проверяет подлинность документов, предзаполняет анкеты и снижает количество ошибок, сокращая время обработки заявлений в 3–4 раза. Стандартизация процессов обеспечивает единое качество обслуживания, а регулярные обновления и калибровка оборудования поддерживают высокий уровень надёжности и информационной безопасности.</p>
-<!-- <p>Операционная эффективность проявляется в увеличении пропускной способности и сокращении времени обработки пассажиров. Система снижает нагрузку на персонал пограничных служб и минимизирует человеческий фактор в принятии решений. Безопасность повышается до 99.9% точности идентификации с улучшенным выявлением нарушителей. Создается цифровой след всех пересечений границы для последующего анализа. Экономические выгоды включают сокращение расходов на персонал и повышение пропускной способности без расширения инфраструктуры. Снижаются риски мошенничества и улучшается качество обслуживания пассажиров. Система применяется в международных аэропортах, морских портах, автомобильных пограничных переходах и на железнодорожных вокзалах. E-Gate обеспечивает оптимальный баланс между безопасностью, эффективностью и удобством использования для всех участников процесса.</p> -->
+<div class="drawer">
+	<a href="index.html" data-en="Home" data-ru="Главная">Главная</a>
+	<a href="index.html#projects" data-en="Projects" data-ru="Проекты">Проекты</a>
+	<a href="index.html#services" data-en="What We Do" data-ru="Что мы делаем">Что мы делаем</a>
+	<a href="index.html#contact" data-en="Contact" data-ru="Контакты">Контакты</a>
 </div>
 
-<!-- Right side: Video container with glass border -->
-<div class="video-container">
-<!-- <video autoplay loop muted playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" src="/videos/e-gate.mp4" type="video/mp4"> </video> -->
-<img src="/images/thinkID.png">
-<!-- 
-Example of how to add your video:
-<video controls>
-<source src="path/to/your/video.mp4" type="video/mp4">
-<source src="path/to/your/video.webm" type="video/webm">
-Your browser does not support the video tag.
-</video>
--->
-</div>
-</div>
-</div>
-</section>
+<div class="shell">
+	<section class="detail wrap">
+		<a href="index.html#projects" class="detail-back"><span class="arrow">←</span> <span data-en="All projects" data-ru="Все проекты">Все проекты</span></a>
+
+		<div class="detail-grid">
+			<div class="detail-copy reveal">
+				<span class="eyebrow" data-en="Biometrics" data-ru="Биометрия">Биометрия</span>
+				<h1>Think-ID</h1>
+				<p data-en="Think-ID is a high-tech terminal for comprehensive biometric data collection during identity document processing. The system is equipped with a professional high-resolution camera with autofocus, automatic lighting correction and background replacement, a multispectral fingerprint scanner with anti-spoofing protection, and a tablet for signature capture with registration of dynamic writing characteristics. The software uses machine learning algorithms for data analysis and quality control, allowing accurate capture of facial images and a complete set of fingerprints with a high level of reliability. All data is protected by end-to-end encryption and digital signature, access auditing is provided, and automatic memory clearing is performed after completion." data-ru="Think-ID представляет собой высокотехнологичный терминал для комплексного сбора биометрических данных при оформлении удостоверений личности. Система оснащена профессиональной камерой высокого разрешения с автофокусировкой, автоматической коррекцией освещения и заменой фона, многоспектральным дактилоскопическим сканером с защитой от подделок, а также планшетом для захвата подписи с регистрацией динамических характеристик написания. Программное обеспечение использует алгоритмы машинного обучения для анализа и контроля качества данных, что позволяет точно фиксировать изображения лица и полный набор отпечатков пальцев с высоким уровнем достоверности. Все данные защищаются сквозным шифрованием и цифровой подписью, обеспечивается аудит доступа и автоматическая очистка памяти после завершения работы.">Think-ID представляет собой высокотехнологичный терминал для комплексного сбора биометрических данных при оформлении удостоверений личности. Система оснащена профессиональной камерой высокого разрешения с автофокусировкой, автоматической коррекцией освещения и заменой фона, многоспектральным дактилоскопическим сканером с защитой от подделок, а также планшетом для захвата подписи с регистрацией динамических характеристик написания. Программное обеспечение использует алгоритмы машинного обучения для анализа и контроля качества данных, что позволяет точно фиксировать изображения лица и полный набор отпечатков пальцев с высоким уровнем достоверности. Все данные защищаются сквозным шифрованием и цифровой подписью, обеспечивается аудит доступа и автоматическая очистка памяти после завершения работы.</p>
+				<p data-en="The compact design of the device fits into a standard transport case and supports autonomous operation for up to 8 hours with quick deployment in 5 minutes. The system is resistant to climatic conditions from -10°C to +40°C and has an IP65 protection rating, making it convenient for mobile scenarios, including medical facilities and remote settlements. Think-ID integrates with government databases, automatically verifies document authenticity, pre-fills forms and reduces errors, cutting application processing time by 3-4 times. Process standardization ensures consistent service quality, while regular updates and equipment calibration maintain high levels of reliability and information security." data-ru="Компактная конструкция устройства помещается в стандартный транспортировочный кейс и поддерживает автономную работу до 8 часов с быстрым развертыванием за 5 минут. Система устойчива к климатическим условиям от -10°C до +40°C и имеет степень защиты IP65, что делает её удобной для выездных сценариев, включая медицинские учреждения и удалённые населённые пункты. Think-ID интегрируется с государственными базами данных, автоматически проверяет подлинность документов, предзаполняет анкеты и снижает количество ошибок, сокращая время обработки заявлений в 3–4 раза. Стандартизация процессов обеспечивает единое качество обслуживания, а регулярные обновления и калибровка оборудования поддерживают высокий уровень надёжности и информационной безопасности.">Компактная конструкция устройства помещается в стандартный транспортировочный кейс и поддерживает автономную работу до 8 часов с быстрым развертыванием за 5 минут. Система устойчива к климатическим условиям от -10°C до +40°C и имеет степень защиты IP65, что делает её удобной для выездных сценариев, включая медицинские учреждения и удалённые населённые пункты. Think-ID интегрируется с государственными базами данных, автоматически проверяет подлинность документов, предзаполняет анкеты и снижает количество ошибок, сокращая время обработки заявлений в 3–4 раза. Стандартизация процессов обеспечивает единое качество обслуживания, а регулярные обновления и калибровка оборудования поддерживают высокий уровень надёжности и информационной безопасности.</p>
+			</div>
+
+			<div class="detail-media glass reveal d1">
+				<img src="images/thinkID.png" alt="Think-ID" />
+			</div>
+		</div>
+
+		<nav class="detail-nav">
+			<a href="egate.html">E-Gate</a>
+			<a href="thinkid.html" class="active">Think-ID</a>
+			<a href="smartbus.html">Smart Bus</a>
+			<a href="ebracelets.html">E-Bracelets</a>
+			<a href="fingerprint_controller.html">Fingerprint Controller</a>
+			<a href="smartglasses.html">Smart Glasses</a>
+			<a href="residencemanager.html">Residence Manager</a>
+			<a href="flightcontroller.html">Flight Controller</a>
+			<a href="epadlock.html">E-Padlock</a>
+			<a href="busmanager.html">Bus Manager</a>
+		</nav>
+	</section>
 </div>
 
-<!-- Footer -->
-<footer id="footer" class="wrapper alt">
-<div class="inner">
-<ul class="menu">
-<li data-en="© Untitled. All rights reserved." data-ru="© Untitled. Все права защищены.">&copy; Untitled. Все права защищены.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-</ul>
-</div>
+<footer class="footer wrap">
+	<div class="footer-inner glass">
+		<div class="brand"><img src="images/logo-new-bottom.png" alt="WhaleTale" /><span>WhaleTale</span></div>
+		<div class="footer-links">
+			<a href="index.html#projects" data-en="Projects" data-ru="Проекты">Проекты</a>
+			<a href="index.html#contact" data-en="Contact" data-ru="Контакты">Контакты</a>
+		</div>
+		<div class="copy" data-en="© 2025 WhaleTale. All rights reserved." data-ru="© 2025 WhaleTale. Все права защищены.">© 2025 WhaleTale. Все права защищены.</div>
+	</div>
 </footer>
 
-<!-- Scripts -->
-<script>
-// Add any necessary JavaScript here
-document.addEventListener('DOMContentLoaded', function() {
-    // Add smooth scrolling or other interactive features if needed
-});
-</script>
-
-<script>
-function setLang(lang) {
-  // Find all elements with translation data
-  document.querySelectorAll('[data-en][data-ru]').forEach(element => {
-    element.textContent = element.getAttribute('data-' + lang);
-  });
-  
-  // Save preference
-  localStorage.setItem('language', lang);
-}
-
-// Load saved language on page load
-window.addEventListener('DOMContentLoaded', () => {
-  const savedLang = localStorage.getItem('language') || 'ru';
-  if (savedLang === 'en') setLang('en');
-});
-</script>
-
+<script src="assets/js/whaletale.js"></script>
 </body>
 </html>

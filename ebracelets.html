@@ -1,118 +1,95 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-<title>E-Bracelet - Hyperspace by HTML5 UP</title>
-<script src="assets/js/preload-fix.js"></script>
-<link rel="stylesheet" href="assets/css/main.css" />
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-
-<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<meta charset="utf-8" />
+	<title>E-Bracelets — WhaleTale</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" href="images/logo-new.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/css/whaletale.css" />
 </head>
-<body class="is-preload preload">
-  <div id="page-transition" style="
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: white;
-  z-index: 9999;
-  display: none;
-  transition: opacity 0.5s ease;
-  opacity: 0;
-"></div>
+<body>
 
-<!-- Header -->
-<header id="learnmore-header">
-<nav>
-<ul>
-<li><a href="index.html" data-en="Home" data-ru="Главная">Главная</a></li>
-<li>
-<a onclick="void(0)" data-en="Our Projects" data-ru="Наши проекты">Наши проекты</a>
-<ul>
-<li><a href="egate.html" class="active">E-Gate</a></li>
-<li><a href="thinkid.html">Think-ID</a></li>
-<li><a href="smartbus.html">Smart-Bus</a></li>
-<li><a href="ebracelets.html">E-Bracelets</a></li>
-<li><a href="fingerprint_controller.html">Fingerprint-Controller</a></li>
-<li><a href="smartglasses.html">Smart-Glasses</a></li>
-<li><a href="residencemanager.html">Residence-Manager</a></li>
-<li><a href="flightcontroller.html">Flight-Controller</a></li>
-<li><a href="epadlock.html">E-Padlock</a></li>
-<li><a href="busmanager.html">Bus-Manager</a></li>
-</ul>
-</li>
-<li><a href="index.html" data-en="Contact Us" data-ru="Связаться">Связаться</a></li>
-</ul>
+<div class="ocean-fx" aria-hidden="true">
+	<div class="rays"></div>
+	<div class="glow one"></div>
+	<div class="glow two"></div>
+	<div class="bubbles"></div>
+</div>
+
+<nav class="nav glass">
+	<a href="index.html" class="brand">
+		<img src="images/logo-new.png" alt="WhaleTale" />
+		<span>WhaleTale</span>
+	</a>
+	<ul class="nav-links">
+		<li><a href="index.html" data-en="Home" data-ru="Главная">Главная</a></li>
+		<li><a href="index.html#projects" data-en="Projects" data-ru="Проекты">Проекты</a></li>
+		<li><a href="index.html#services" data-en="What We Do" data-ru="Что мы делаем">Что мы делаем</a></li>
+		<li><a href="index.html#contact" data-en="Contact" data-ru="Контакты">Контакты</a></li>
+	</ul>
+	<div class="nav-right">
+		<div class="lang" data-lang="ru">
+			<span class="pill"></span>
+			<button data-l="en" onclick="setLang('en')">EN</button>
+			<button data-l="ru" onclick="setLang('ru')" class="active">RU</button>
+		</div>
+		<div class="burger" aria-label="Menu"><span></span><span></span><span></span></div>
+	</div>
 </nav>
-</header>
 
-<!-- Wrapper -->
-<div id="wrapper">
-<!-- Main -->
-<section id="main" class="wrapper fade-up">
-<div class="inner">
-<div class="project-layout">
-<!-- Left side: Project content -->
-<div class="project-content">
-<h1>E-Bracelet</h1>
-<p data-en="E-Bracelets is a modern electronic monitoring system for 24/7 tracking of individuals under supervision, providing an alternative to imprisonment through geolocation and biometric control technologies. Built-in optical and capacitive sensors detect bracelet removal attempts, while a biometric sensor measures pulse and body temperature to confirm the wearer's presence. The standard RF version operates via radio frequency communication with a base station, while the autonomous GPS/GSM version provides continuous tracking via cellular communication with a ceramic antenna for reliable reception even indoors. The system creates geofences with automatic boundary violation notifications. The central web interface displays current location, movement history, and device status on interactive maps in real time. Protection against unauthorized removal includes a super-strong strap, special lock, housing tamper sensors, and optical skin contact sensors. All data is encrypted, devices are protected by digital certificates, and the system integrates with databases of the Ministry of Internal Affairs, penitentiary service, and judicial authorities." data-ru="E-Bracelets — это современная система электронного мониторинга для круглосуточного отслеживания лиц под надзором, предоставляющая альтернативу тюремному заключению через технологии геолокации и биометрического контроля. Встроенные оптические и емкостные датчики обнаруживают попытки снятия браслета, а биометрический сенсор измеряет пульс и температуру тела для подтверждения присутствия носителя. Стандартная RF-версия работает через радиочастотную связь с базовой станцией, автономная GPS/GSM-версия обеспечивает непрерывное отслеживание через сотовую связь с керамической антенной для надежного приема даже в помещениях. Система создает геозоны с автоматическими уведомлениями о нарушениях границ. Центральный веб-интерфейс отображает текущее местоположение, историю перемещений и статус устройств на интерактивных картах в реальном времени. Защита от несанкционированного снятия включает сверхпрочный ремешок, специальный замок, датчики вскрытия корпуса и оптические сенсоры контакта с кожей. Все данные шифруются, устройства защищены цифровыми сертификатами, а система интегрируется с базами данных МВД, ФСИН и судебных органов.">E-Bracelets — это современная система электронного мониторинга для круглосуточного отслеживания лиц под надзором, предоставляющая альтернативу тюремному заключению через технологии геолокации и биометрического контроля. Встроенные оптические и емкостные датчики обнаруживают попытки снятия браслета, а биометрический сенсор измеряет пульс и температуру тела для подтверждения присутствия носителя. Стандартная RF-версия работает через радиочастотную связь с базовой станцией, автономная GPS/GSM-версия обеспечивает непрерывное отслеживание через сотовую связь с керамической антенной для надежного приема даже в помещениях. Система создает геозоны с автоматическими уведомлениями о нарушениях границ. Центральный веб-интерфейс отображает текущее местоположение, историю перемещений и статус устройств на интерактивных картах в реальном времени. Защита от несанкционированного снятия включает сверхпрочный ремешок, специальный замок, датчики вскрытия корпуса и оптические сенсоры контакта с кожей. Все данные шифруются, устройства защищены цифровыми сертификатами, а система интегрируется с базами данных МВД, ФСИН и судебных органов.</p>
-<p data-en="E-Bracelets reduces detention and prison costs by up to 80%, allowing supervised individuals to continue working, support their families, and maintain social adaptation. Alternative sentencing measures relieve the judicial system, reduce offender stigmatization and recidivism rates with constant monitoring of territorial restrictions, curfews, and medical indicators. The system instantly sends violation notifications via SMS, email, and mobile app push notifications. Automatic diagnostics monitors the technical condition of bracelets, charge level, and communication quality, predictive maintenance prevents failures, and a centralized platform manages device replacement on schedule. Full compliance with personal data legislation and international human rights standards makes E-Bracelets a modern and humane electronic monitoring solution with effective control and resource savings." data-ru="E-Bracelets снижает затраты на содержание в СИЗО и тюрьмах до 80%, позволяя подконтрольным лицам продолжать трудовую деятельность, поддерживать семью и сохранять социальную адаптацию. Альтернативные меры наказания разгружают судебную систему, снижают стигматизацию правонарушителей и уровень рецидивов при постоянном контроле территориальных ограничений, комендантского часа и медицинских показателей. Система мгновенно отправляет уведомления о нарушениях через SMS, email и push-уведомления мобильного приложения. Автоматическая диагностика контролирует техническое состояние браслетов, уровень заряда и качество связи, предиктивное обслуживание предотвращает сбои, а централизованная платформа управляет заменой устройств по графику. Полное соответствие законодательству о персональных данных и международным стандартам прав человека делает E-Bracelets современным и гуманным решением для электронного мониторинга с эффективным контролем и экономией ресурсов.">E-Bracelets снижает затраты на содержание в СИЗО и тюрьмах до 80%, позволяя подконтрольным лицам продолжать трудовую деятельность, поддерживать семью и сохранять социальную адаптацию. Альтернативные меры наказания разгружают судебную систему, снижают стигматизацию правонарушителей и уровень рецидивов при постоянном контроле территориальных ограничений, комендантского часа и медицинских показателей. Система мгновенно отправляет уведомления о нарушениях через SMS, email и push-уведомления мобильного приложения. Автоматическая диагностика контролирует техническое состояние браслетов, уровень заряда и качество связи, предиктивное обслуживание предотвращает сбои, а централизованная платформа управляет заменой устройств по графику. Полное соответствие законодательству о персональных данных и международным стандартам прав человека делает E-Bracelets современным и гуманным решением для электронного мониторинга с эффективным контролем и экономией ресурсов.</p>
-<!-- <p>Операционная эффективность проявляется в увеличении пропускной способности и сокращении времени обработки пассажиров. Система снижает нагрузку на персонал пограничных служб и минимизирует человеческий фактор в принятии решений. Безопасность повышается до 99.9% точности идентификации с улучшенным выявлением нарушителей. Создается цифровой след всех пересечений границы для последующего анализа. Экономические выгоды включают сокращение расходов на персонал и повышение пропускной способности без расширения инфраструктуры. Снижаются риски мошенничества и улучшается качество обслуживания пассажиров. Система применяется в международных аэропортах, морских портах, автомобильных пограничных переходах и на железнодорожных вокзалах. E-Gate обеспечивает оптимальный баланс между безопасностью, эффективностью и удобством использования для всех участников процесса.</p> -->
+<div class="drawer">
+	<a href="index.html" data-en="Home" data-ru="Главная">Главная</a>
+	<a href="index.html#projects" data-en="Projects" data-ru="Проекты">Проекты</a>
+	<a href="index.html#services" data-en="What We Do" data-ru="Что мы делаем">Что мы делаем</a>
+	<a href="index.html#contact" data-en="Contact" data-ru="Контакты">Контакты</a>
 </div>
 
-<!-- Right side: Video container with glass border -->
-<div class="video-container">
-<!-- <video autoplay loop muted playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" src="/videos/e-gate.mp4" type="video/mp4"> </video> -->
-<img src="/images/e-bracelet-readmore.png">
-<!--
-Example of how to add your video:
-<video controls>
-<source src="path/to/your/video.mp4" type="video/mp4">
-<source src="path/to/your/video.webm" type="video/webm">
-Your browser does not support the video tag.
-</video>
--->
-</div>
-</div>
-</div>
-</section>
+<div class="shell">
+	<section class="detail wrap">
+		<a href="index.html#projects" class="detail-back"><span class="arrow">←</span> <span data-en="All projects" data-ru="Все проекты">Все проекты</span></a>
+
+		<div class="detail-grid">
+			<div class="detail-copy reveal">
+				<span class="eyebrow" data-en="Monitoring" data-ru="Мониторинг">Мониторинг</span>
+				<h1>E-Bracelets</h1>
+				<p data-en="E-Bracelets is a modern electronic monitoring system for 24/7 tracking of individuals under supervision, providing an alternative to imprisonment through geolocation and biometric control technologies. Built-in optical and capacitive sensors detect bracelet removal attempts, while a biometric sensor measures pulse and body temperature to confirm the wearer's presence. The standard RF version operates via radio frequency communication with a base station, while the autonomous GPS/GSM version provides continuous tracking via cellular communication with a ceramic antenna for reliable reception even indoors. The system creates geofences with automatic boundary violation notifications. The central web interface displays current location, movement history, and device status on interactive maps in real time. Protection against unauthorized removal includes a super-strong strap, special lock, housing tamper sensors, and optical skin contact sensors. All data is encrypted, devices are protected by digital certificates, and the system integrates with databases of law-enforcement, penitentiary and judicial authorities." data-ru="E-Bracelets — это современная система электронного мониторинга для круглосуточного отслеживания лиц под надзором, предоставляющая альтернативу тюремному заключению через технологии геолокации и биометрического контроля. Встроенные оптические и емкостные датчики обнаруживают попытки снятия браслета, а биометрический сенсор измеряет пульс и температуру тела для подтверждения присутствия носителя. Стандартная RF-версия работает через радиочастотную связь с базовой станцией, автономная GPS/GSM-версия обеспечивает непрерывное отслеживание через сотовую связь с керамической антенной для надежного приема даже в помещениях. Система создает геозоны с автоматическими уведомлениями о нарушениях границ. Центральный веб-интерфейс отображает текущее местоположение, историю перемещений и статус устройств на интерактивных картах в реальном времени. Защита от несанкционированного снятия включает сверхпрочный ремешок, специальный замок, датчики вскрытия корпуса и оптические сенсоры контакта с кожей. Все данные шифруются, устройства защищены цифровыми сертификатами, а система интегрируется с базами данных правоохранительных, пенитенциарных и судебных органов.">E-Bracelets — это современная система электронного мониторинга для круглосуточного отслеживания лиц под надзором, предоставляющая альтернативу тюремному заключению через технологии геолокации и биометрического контроля. Встроенные оптические и емкостные датчики обнаруживают попытки снятия браслета, а биометрический сенсор измеряет пульс и температуру тела для подтверждения присутствия носителя. Стандартная RF-версия работает через радиочастотную связь с базовой станцией, автономная GPS/GSM-версия обеспечивает непрерывное отслеживание через сотовую связь с керамической антенной для надежного приема даже в помещениях. Система создает геозоны с автоматическими уведомлениями о нарушениях границ. Центральный веб-интерфейс отображает текущее местоположение, историю перемещений и статус устройств на интерактивных картах в реальном времени. Защита от несанкционированного снятия включает сверхпрочный ремешок, специальный замок, датчики вскрытия корпуса и оптические сенсоры контакта с кожей. Все данные шифруются, устройства защищены цифровыми сертификатами, а система интегрируется с базами данных правоохранительных, пенитенциарных и судебных органов.</p>
+				<p data-en="E-Bracelets reduces detention and prison costs by up to 80%, allowing supervised individuals to continue working, support their families, and maintain social adaptation. Alternative sentencing measures relieve the judicial system, reduce offender stigmatization and recidivism rates with constant monitoring of territorial restrictions, curfews, and medical indicators. The system instantly sends violation notifications via SMS, email, and mobile app push notifications. Automatic diagnostics monitors the technical condition of bracelets, charge level, and communication quality, predictive maintenance prevents failures, and a centralized platform manages device replacement on schedule. Full compliance with personal data legislation and international human rights standards makes E-Bracelets a modern and humane electronic monitoring solution with effective control and resource savings." data-ru="E-Bracelets снижает затраты на содержание под стражей и в тюрьмах до 80%, позволяя подконтрольным лицам продолжать трудовую деятельность, поддерживать семью и сохранять социальную адаптацию. Альтернативные меры наказания разгружают судебную систему, снижают стигматизацию правонарушителей и уровень рецидивов при постоянном контроле территориальных ограничений, комендантского часа и медицинских показателей. Система мгновенно отправляет уведомления о нарушениях через SMS, email и push-уведомления мобильного приложения. Автоматическая диагностика контролирует техническое состояние браслетов, уровень заряда и качество связи, предиктивное обслуживание предотвращает сбои, а централизованная платформа управляет заменой устройств по графику. Полное соответствие законодательству о персональных данных и международным стандартам прав человека делает E-Bracelets современным и гуманным решением для электронного мониторинга с эффективным контролем и экономией ресурсов.">E-Bracelets снижает затраты на содержание под стражей и в тюрьмах до 80%, позволяя подконтрольным лицам продолжать трудовую деятельность, поддерживать семью и сохранять социальную адаптацию. Альтернативные меры наказания разгружают судебную систему, снижают стигматизацию правонарушителей и уровень рецидивов при постоянном контроле территориальных ограничений, комендантского часа и медицинских показателей. Система мгновенно отправляет уведомления о нарушениях через SMS, email и push-уведомления мобильного приложения. Автоматическая диагностика контролирует техническое состояние браслетов, уровень заряда и качество связи, предиктивное обслуживание предотвращает сбои, а централизованная платформа управляет заменой устройств по графику. Полное соответствие законодательству о персональных данных и международным стандартам прав человека делает E-Bracelets современным и гуманным решением для электронного мониторинга с эффективным контролем и экономией ресурсов.</p>
+			</div>
+
+			<div class="detail-media glass reveal d1">
+				<img src="images/e-bracelet-readmore.png" alt="E-Bracelets" />
+			</div>
+		</div>
+
+		<nav class="detail-nav">
+			<a href="egate.html">E-Gate</a>
+			<a href="thinkid.html">Think-ID</a>
+			<a href="smartbus.html">Smart Bus</a>
+			<a href="ebracelets.html" class="active">E-Bracelets</a>
+			<a href="fingerprint_controller.html">Fingerprint Controller</a>
+			<a href="smartglasses.html">Smart Glasses</a>
+			<a href="residencemanager.html">Residence Manager</a>
+			<a href="flightcontroller.html">Flight Controller</a>
+			<a href="epadlock.html">E-Padlock</a>
+			<a href="busmanager.html">Bus Manager</a>
+		</nav>
+	</section>
 </div>
 
-<!-- Footer -->
-<footer id="footer" class="wrapper alt">
-<div class="inner">
-<ul class="menu">
-<li data-en="© Untitled. All rights reserved." data-ru="© Untitled. Все права защищены.">&copy; Untitled. Все права защищены.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-</ul>
-</div>
+<footer class="footer wrap">
+	<div class="footer-inner glass">
+		<div class="brand"><img src="images/logo-new-bottom.png" alt="WhaleTale" /><span>WhaleTale</span></div>
+		<div class="footer-links">
+			<a href="index.html#projects" data-en="Projects" data-ru="Проекты">Проекты</a>
+			<a href="index.html#contact" data-en="Contact" data-ru="Контакты">Контакты</a>
+		</div>
+		<div class="copy" data-en="© 2025 WhaleTale. All rights reserved." data-ru="© 2025 WhaleTale. Все права защищены.">© 2025 WhaleTale. Все права защищены.</div>
+	</div>
 </footer>
 
-<!-- Scripts -->
-<script>
-// Add any necessary JavaScript here
-document.addEventListener('DOMContentLoaded', function() {
-    // Add smooth scrolling or other interactive features if needed
-});
-</script>
-
-<script>
-function setLang(lang) {
-  // Find all elements with translation data
-  document.querySelectorAll('[data-en][data-ru]').forEach(element => {
-    element.textContent = element.getAttribute('data-' + lang);
-  });
-  
-  // Save preference
-  localStorage.setItem('language', lang);
-}
-
-// Load saved language on page load
-window.addEventListener('DOMContentLoaded', () => {
-  const savedLang = localStorage.getItem('language') || 'ru';
-  if (savedLang === 'en') setLang('en');
-});
-</script>
-
+<script src="assets/js/whaletale.js"></script>
 </body>
 </html>
