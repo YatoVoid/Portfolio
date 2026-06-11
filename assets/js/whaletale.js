@@ -25,6 +25,14 @@ function setLang(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+	// Keep copyright year current without touching HTML each year
+	const yr = new Date().getFullYear().toString();
+	document.querySelectorAll('.copy').forEach(el => {
+		['data-en', 'data-ru'].forEach(a => {
+			if (el.hasAttribute(a)) el.setAttribute(a, el.getAttribute(a).replace(/\d{4}/, yr));
+		});
+	});
+
 	let lang = 'ru';
 	try { lang = localStorage.getItem('language') || 'ru'; } catch (e) {}
 	setLang(lang);
