@@ -442,8 +442,8 @@ h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin
 .proj-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 30%, rgba(4,24,42,0.85)); }
 .proj-tag { position: absolute; top: 14px; left: 14px; z-index: 2; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; background: rgba(4,24,42,0.5); border: 1px solid var(--glass-border); color: var(--accent); backdrop-filter: blur(8px); }
 .proj-tag.live { color: var(--accent-2); }
-.proj-body { position: relative; z-index: 2; padding: 22px; margin-top: -40px; display: flex; flex-direction: column; flex: 1; }
-.proj-body h3 { font-size: 1.4rem; margin-bottom: 10px; }
+.proj-body { position: relative; z-index: 2; padding: 0 22px 22px; padding-top: 10px; margin-top: -39px; display: flex; flex-direction: column; flex: 1; }
+.proj-body h3 { font-size: 1.4rem; margin-bottom: 8px; margin-top: 0; }
 .proj-body p { color: var(--text-dim); font-size: 0.94rem; margin: 0 0 18px; flex: 1; }
 .proj-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.92rem; color: var(--accent); align-self: flex-start; }
 .proj-link .arrow { transition: transform 0.3s var(--ease); }
@@ -469,8 +469,8 @@ h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin
 }
 .proj-card--wide:hover { transform: translateY(-6px); box-shadow: 0 30px 70px rgba(2,14,30,0.7); }
 .proj-card--wide .proj-body {
-	margin-top: -72px;
-	padding: 24px 30px 32px;
+	margin-top: -39px;
+	padding: 14px 30px 32px;
 }
 
 /* object-fit:contain helper for tall screenshots */
@@ -479,7 +479,7 @@ h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin
 	object-position: center center;
 }
 .proj-media:has(.img-contain) {
-	background: rgba(4,12,26,0.7);
+	background: transparent;
 }
 
 /* ---- Features (what we do) ---- */
@@ -566,6 +566,8 @@ h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin
 	.detail-grid { grid-template-columns: 1fr; }
 	.detail-media { position: static; }
 	.stats { grid-template-columns: repeat(2, 1fr); }
+	.hero { flex-direction: column; justify-content: flex-start; align-items: center; padding-bottom: 40px; }
+	.scroll-hint { position: relative; bottom: auto; left: auto; transform: none; margin: 32px auto 0; padding-bottom: 8px; }
 }
 @media (max-width: 820px) {
 	.nav-links { display: none; }
@@ -582,4 +584,125 @@ h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin
 @media (prefers-reduced-motion: reduce) {
 	*, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
 	html { scroll-behavior: auto; }
+}
+
+/* ============================================================
+   UNDERWATER LIFE — whale & fish schools
+   ============================================================ */
+@keyframes whaleLTR {
+	0%   { transform: translate3d(-500px, 0, 0); opacity: 0; }
+	5%   { opacity: 1; }
+	92%  { opacity: 1; }
+	100% { transform: translate3d(calc(100vw + 500px), 0, 0); opacity: 0; }
+}
+@keyframes whaleRTL {
+	0%   { transform: translate3d(calc(100vw + 500px), 0, 0) scaleX(-1); opacity: 0; }
+	5%   { opacity: 1; }
+	92%  { opacity: 1; }
+	100% { transform: translate3d(-500px, 0, 0) scaleX(-1); opacity: 0; }
+}
+@keyframes fishLTR {
+	0%   { transform: translate3d(-160px, 0, 0); opacity: 0; }
+	8%   { opacity: 1; }
+	88%  { opacity: 1; }
+	100% { transform: translate3d(calc(100vw + 160px), 0, 0); opacity: 0; }
+}
+@keyframes fishRTL {
+	0%   { transform: translate3d(calc(100vw + 160px), 0, 0) scaleX(-1); opacity: 0; }
+	8%   { opacity: 1; }
+	88%  { opacity: 1; }
+	100% { transform: translate3d(-160px, 0, 0) scaleX(-1); opacity: 0; }
+}
+@keyframes fishBob {
+	from { transform: translateY(-3px); }
+	to   { transform: translateY(3px); }
+}
+@keyframes whaleTailWag {
+	0%, 100% { transform: rotate(-14deg); }
+	50%       { transform: rotate(14deg); }
+}
+@keyframes whaleBodyBob {
+	0%, 100% { transform: translateY(-4px); }
+	50%       { transform: translateY(4px); }
+}
+
+/* ============================================================
+   ORB BUBBLE-POP MICRO-INTERACTION
+   ============================================================ */
+.hero-orb { cursor: pointer; }
+
+@keyframes orbCollapse {
+	0%   { transform: scale(1); }
+	42%  { transform: scale(1.22);
+	       box-shadow: inset 0 8px 40px rgba(255,255,255,0.45),
+	                   0 0 110px rgba(70,216,255,0.9); }
+	100% { transform: scale(0.02); opacity: 0; }
+}
+@keyframes orbRegen {
+	0%   { transform: scale(0.02); opacity: 0; }
+	58%  { transform: scale(1.1);  opacity: 1; }
+	100% { transform: scale(1);   opacity: 1; }
+}
+@keyframes orbParticle {
+	0%   { transform: translate(0, 0) scale(1); opacity: 1; }
+	100% { transform: translate(var(--px, 0px), var(--py, 0px)) scale(0); opacity: 0; }
+}
+.hero-orb.orb-popping {
+	animation: orbCollapse 0.46s cubic-bezier(0.36, 0.07, 0.19, 0.97) forwards;
+}
+.hero-orb.orb-regen {
+	animation: orbRegen 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.orb-particle {
+	position: absolute;
+	border-radius: 50%;
+	pointer-events: none;
+	animation: orbParticle var(--dur, 0.75s) cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ============================================================
+   MOBILE GRADIENT FIX — darker top so hero text is readable
+   ============================================================ */
+@media (max-width: 820px) {
+	body {
+		background-attachment: scroll;
+		background: linear-gradient(180deg,
+			#0c4578 0%,
+			var(--mid)  22%,
+			var(--deep) 46%,
+			var(--ink)  70%,
+			var(--abyss) 100%);
+	}
+}
+
+/* ============================================================
+   CARD CONSISTENCY — img-contain cards (Padlock, Residence Mgr)
+   ============================================================ */
+.proj-media:has(.img-contain) {
+	background: transparent;
+}
+.proj-media:has(.img-contain)::after {
+	display: none;
+}
+
+/* ============================================================
+   DETAIL VIDEO — stretch past baked-in pillarbox bars
+   ============================================================ */
+.detail-media video {
+	width: 100%;
+	border-radius: var(--radius-sm);
+}
+
+/* ============================================================
+   CROSS-PAGE TRANSITIONS — smooth cross-fade, stable ocean bg
+   ============================================================ */
+@view-transition { navigation: auto; }
+
+/* Pin the ocean background and nav so they don't cross-fade */
+.ocean-fx { view-transition-name: ocean-bg; }
+.nav      { view-transition-name: site-nav; }
+
+::view-transition-image-pair(ocean-bg),
+::view-transition-image-pair(site-nav) {
+	animation-duration: 0s;
 }
