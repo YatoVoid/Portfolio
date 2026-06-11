@@ -63,13 +63,15 @@ a { color: inherit; text-decoration: none; }
 	z-index: 0;
 	pointer-events: none;
 	overflow: hidden;
+	transform: translateZ(0);
+	will-change: transform;
 }
 .ocean-fx .rays {
 	position: absolute;
 	top: -20%;
 	left: 50%;
 	width: 140vw;
-	height: 90vh;
+	height: 100%;
 	transform: translateX(-50%);
 	background:
 		conic-gradient(from 180deg at 50% 0%,
@@ -96,7 +98,7 @@ a { color: inherit; text-decoration: none; }
 	opacity: 0.35;
 }
 .ocean-fx .glow.one { top: -10vw; right: -10vw; background: radial-gradient(circle, rgba(120,220,255,0.55), transparent 70%); }
-.ocean-fx .glow.two { bottom: 5vh; left: -15vw; background: radial-gradient(circle, rgba(60,140,255,0.45), transparent 70%); }
+.ocean-fx .glow.two { bottom: 5%; left: -15vw; background: radial-gradient(circle, rgba(60,140,255,0.45), transparent 70%); }
 
 /* rising bubbles */
 .bubbles { position: absolute; inset: 0; }
