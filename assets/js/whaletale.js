@@ -159,7 +159,8 @@ function initOceanLife() {
 	function spawnWhale(e, delayS) {
 		const parsed = svgParser.parseFromString(whaleSVGStr, 'image/svg+xml');
 		const svg = document.importNode(parsed.documentElement, true);
-		svg.style.cssText = `position:absolute;pointer-events:none;will-change:transform,opacity;top:${e.top}%;left:0;width:${e.w}px;animation:${e.r ? 'whaleLTR' : 'whaleRTL'} ${e.dur}s linear forwards;animation-delay:${delayS.toFixed(3)}s`;
+		const topPx = Math.round((e.top / 100) * window.innerHeight);
+		svg.style.cssText = `position:absolute;pointer-events:none;will-change:transform,opacity;top:${topPx}px;left:0;width:${e.w}px;animation:${e.r ? 'whaleLTR' : 'whaleRTL'} ${e.dur}s linear forwards;animation-delay:${delayS.toFixed(3)}s`;
 		container.appendChild(svg);
 		const rm = (e.dur + delayS) * 1000 + 500;
 		if (rm > 0) setTimeout(() => svg.remove(), rm);
@@ -213,7 +214,8 @@ function initOceanLife() {
 
 	function spawnFish(e, delayS) {
 		const group = document.createElement('div');
-		group.style.cssText = `position:absolute;display:flex;align-items:center;gap:${e.gap}px;top:${e.top}%;left:0;pointer-events:none;will-change:transform,opacity;animation:${e.r ? 'fishLTR' : 'fishRTL'} ${e.dur}s linear forwards;animation-delay:${delayS.toFixed(3)}s`;
+		const topPx = Math.round((e.top / 100) * window.innerHeight);
+		group.style.cssText = `position:absolute;display:flex;align-items:center;gap:${e.gap}px;top:${topPx}px;left:0;pointer-events:none;will-change:transform,opacity;animation:${e.r ? 'fishLTR' : 'fishRTL'} ${e.dur}s linear forwards;animation-delay:${delayS.toFixed(3)}s`;
 		const rand = rng(e.seed);
 		for (let i = 0; i < e.n; i++) {
 			const sz = e.sz * (0.65 + rand() * 0.7), op = 0.65 + rand() * 0.35;
