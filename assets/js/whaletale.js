@@ -1,5 +1,8 @@
 // WhaleTale site behaviour
 
+// Lock viewport height once so mobile toolbars hiding never shift ocean elements
+document.documentElement.style.setProperty('--win-h', window.innerHeight + 'px');
+
 // Persistent clock — survives page navigations AND browser refreshes
 (function() {
 	const KEY = 'wt_t0';
@@ -149,17 +152,17 @@ function initOceanLife() {
 	</svg>`;
 
 	// ---- WHALE SCHEDULE ----
-	const WHALE_KEY = 'wt_wsched';
+	const WHALE_KEY = 'wt_wsched2';
 	let wSched;
 	try { wSched = JSON.parse(localStorage.getItem(WHALE_KEY)); } catch(e) {}
 	if (!wSched) {
 		wSched = [];
-		let t = 20000 + Math.random() * 20000;
+		let t = 12000 + Math.random() * 18000;
 		while (t < 86400000) {
 			const dur = +(28 + Math.random() * 16).toFixed(1);
 			wSched.push({ t: Math.round(t), dur, r: Math.random() > 0.5 ? 1 : 0,
 				w: Math.round(260 + Math.random() * 120), top: +(5 + Math.random() * 30).toFixed(1) });
-			t += dur * 1000 + 100000 + Math.random() * 100000;
+			t += dur * 1000 + 45000 + Math.random() * 55000;
 		}
 		try { localStorage.setItem(WHALE_KEY, JSON.stringify(wSched)); } catch(e) {}
 	}
