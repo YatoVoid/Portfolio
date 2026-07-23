@@ -71,10 +71,14 @@ a { color: inherit; text-decoration: none; }
 }
 .ocean-fx .rays {
 	position: absolute;
-	top: -20svh;
+	/* Origin offset scales with vmax so the light wedge keeps reaching the
+	   left/right edges on wide-aspect-ratio viewports (a plain svh offset
+	   collapses toward the top-center on very wide screens, leaving the
+	   rays visibly stopping partway before the edge). */
+	top: calc(-45vmax);
 	left: 50%;
 	width: 140vw;
-	height: 100svh;
+	height: calc(100svh + 45vmax);
 	transform: translateX(-50%);
 	background:
 		conic-gradient(from 180deg at 50% 0%,
