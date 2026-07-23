@@ -1,7 +1,21 @@
 // WhaleTale site behaviour
 
-// Lock viewport height once so mobile toolbars hiding never shift ocean elements
-document.documentElement.style.setProperty('--win-h', window.innerHeight + 'px');
+// Lock viewport height to the current window size, but only re-lock it when
+// the window WIDTH changes (real resize/zoom) — not on mobile browsers
+// hiding/showing their toolbar mid-scroll, which changes height only and
+// must never shift ocean elements (see "fix toolbar-hide snap").
+(function() {
+	let lastWidth = window.innerWidth;
+	function lockWinH() {
+		document.documentElement.style.setProperty('--win-h', window.innerHeight + 'px');
+	}
+	lockWinH();
+	window.addEventListener('resize', () => {
+		if (window.innerWidth === lastWidth) return;
+		lastWidth = window.innerWidth;
+		lockWinH();
+	}, { passive: true });
+})();
 
 // Persistent clock — survives page navigations AND browser refreshes
 (function() {
