@@ -128,6 +128,15 @@ function initOceanLife() {
 		};
 	}
 
+	// Whale/fish base sizes below were tuned against a ~1600px-wide viewport.
+	// On wider screens that fixed pixel size shrinks proportionally into a
+	// tiny, disconnected speck, so scale sizes up (never down) for anything
+	// wider than that reference.
+	const SIZE_REF_W = 1600;
+	function widthScale() {
+		return Math.max(1, window.innerWidth / SIZE_REF_W);
+	}
+
 	const whaleSVGStr = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 110" aria-hidden="true">
 		<g style="transform-box:fill-box;transform-origin:50% 50%;animation:whaleBodyBob 3.5s ease-in-out infinite">
 			<polygon fill="rgba(5,18,52,0.28)"
@@ -171,7 +180,8 @@ function initOceanLife() {
 		const parsed = svgParser.parseFromString(whaleSVGStr, 'image/svg+xml');
 		const svg = document.importNode(parsed.documentElement, true);
 		const topPx = Math.round((e.top / 100) * window.innerHeight);
-		svg.style.cssText = `position:absolute;pointer-events:none;will-change:transform,opacity;top:${topPx}px;left:0;width:${e.w}px;animation:${e.r ? 'whaleLTR' : 'whaleRTL'} ${e.dur}s linear forwards;animation-delay:${delayS.toFixed(3)}s`;
+		const w = Math.round(e.w * widthScale());
+		svg.style.cssText = `position:absolute;pointer-events:none;will-change:transform,opacity;top:${topPx}px;left:0;width:${w}px;animation:${e.r ? 'whaleLTR' : 'whaleRTL'} ${e.dur}s linear forwards;animation-delay:${delayS.toFixed(3)}s`;
 		container.appendChild(svg);
 		const rm = (e.dur + delayS) * 1000 + 500;
 		if (rm > 0) setTimeout(() => svg.remove(), rm);
@@ -225,11 +235,13 @@ function initOceanLife() {
 
 	function spawnFish(e, delayS) {
 		const group = document.createElement('div');
+		const scale = widthScale();
 		const topPx = Math.round((e.top / 100) * window.innerHeight);
-		group.style.cssText = `position:absolute;display:flex;align-items:center;gap:${e.gap}px;top:${topPx}px;left:0;pointer-events:none;will-change:transform,opacity;animation:${e.r ? 'fishLTR' : 'fishRTL'} ${e.dur}s linear forwards;animation-delay:${delayS.toFixed(3)}s`;
+		const gap = e.gap * scale;
+		group.style.cssText = `position:absolute;display:flex;align-items:center;gap:${gap.toFixed(1)}px;top:${topPx}px;left:0;pointer-events:none;will-change:transform,opacity;animation:${e.r ? 'fishLTR' : 'fishRTL'} ${e.dur}s linear forwards;animation-delay:${delayS.toFixed(3)}s`;
 		const rand = rng(e.seed);
 		for (let i = 0; i < e.n; i++) {
-			const sz = e.sz * (0.65 + rand() * 0.7), op = 0.65 + rand() * 0.35;
+			const sz = e.sz * scale * (0.65 + rand() * 0.7), op = 0.65 + rand() * 0.35;
 			const yo = Math.round(rand() * 30 - 15), bd = +(1.1 + rand() * 0.9).toFixed(2), bdy = +(rand() * 0.8).toFixed(2);
 			const wrap = document.createElement('div');
 			wrap.style.cssText = `width:${sz.toFixed(1)}px;flex-shrink:0;margin-top:${yo}px;opacity:${e.opa};animation:fishBob ${bd}s ease-in-out ${bdy}s infinite alternate`;
