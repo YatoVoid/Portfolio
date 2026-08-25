@@ -1,0 +1,19 @@
+CODEX UNAVAILABLE — SELF-REVIEW
+
+Change: assets/js/whaletale.js — added widthScale() helper (max(1,
+innerWidth/1600)), applied to whale `w`, fish `sz`, and fish `gap` at spawn
+time only. No schedule format change.
+
+Verified via Playwright, direct DOM measurement (getBoundingClientRect, not
+screenshot-only):
+- 3440px viewport: whale 645px (18.8% of viewport width), fish 31.5-51.5px
+- 1440px viewport: whale 284px (19.7% of viewport width), fish 13.7-24.5px
+  — consistent proportion across both, versus the old fixed-px behavior
+  where the same whale would render at a fixed ~260-380px regardless of
+  screen width (1.2% of a 3440-wide screen vs ~20% of a 1440-wide one).
+- 375px mobile viewport: fish 19-33.6px, scale=1 (unchanged) — confirms no
+  regression below the 1600px reference.
+- Visual screenshot at 3440x1440 with whale centered in frame shows a
+  clearly readable, proportionate whale silhouette instead of a lost speck.
+
+No P1/P2 findings. Clean.

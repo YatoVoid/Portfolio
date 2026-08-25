@@ -1,0 +1,18 @@
+CODEX UNAVAILABLE — SELF-ADVERSARIAL REVIEW (end-of-shift, updated again)
+
+Three distinct, real bugs found and fixed across this run, all traced back
+to the same underlying pattern: fixed-geometry decorative elements (pixel
+sizes, a height-only offset) that don't scale correctly to viewport
+proportions on large/wide/zoomed displays.
+
+KR1: whale/fish fixed-pixel sizing -> scaled with viewport width.
+KR2: stale --win-h on resize/zoom -> width-gated resize listener.
+KR3: light-ray origin offset tied to height only -> vmax-based, so it
+     tracks whichever dimension (width or height) actually dominates.
+
+Each was reproduced with direct, isolated evidence (DOM measurement or
+isolated-render screenshots) before being called a real bug, and each fix
+was verified not to regress mobile/normal-size appearance before landing.
+
+Ending shift — three reported issues (all under the same original
+objective) addressed and verified.

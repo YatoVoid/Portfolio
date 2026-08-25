@@ -1,0 +1,22 @@
+CODEX UNAVAILABLE — SELF-ADVERSARIAL REVIEW
+
+Challenge: is width-change gating actually reliable, or could it silently
+reintroduce the toolbar-hide snap bug in some browser?
+
+Rebuttal: verified directly (not assumed) via Playwright: a height-only
+viewport change (390x844 -> 390x700, matching mobile toolbar show) leaves
+--win-h completely unchanged (844px before and after). A width-changing
+resize (1440x900 -> 3440x1440) correctly re-locks --win-h to the new height
+(1440px) and eliminates the reproduced seam. Both directions tested with
+before/after evidence, not just code reasoning.
+
+Challenge: could a purely vertical desktop window resize (drag only the
+bottom edge, width unchanged) fail to get picked up?
+
+Rebuttal: yes, this is a known, accepted gap — dragging only a window's
+bottom edge without changing width would not re-lock --win-h. This is a
+narrow edge case (most real resize/zoom/maximize actions change width) and
+accepting it is the correct trade-off given the alternative (reacting to
+pure height changes) is exactly the regression the prior commit fixed.
+
+Verdict: APPROVED.

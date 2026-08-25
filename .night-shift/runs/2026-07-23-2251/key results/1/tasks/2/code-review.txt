@@ -1,0 +1,8 @@
+CODEX UNAVAILABLE — SELF-REVIEW
+
+Verification task, no source changes. Confirmed all 11 HTML pages include
+whaletale.js (grep across *.html), so the fix is site-wide by construction.
+Spot-checked egate.html independently (not just index.html) at 3440x1440:
+whale renders at 611px = 17.8% of viewport width, consistent with index.html's
+18.8%/19.7% figures. Also re-confirmed 375px mobile control screenshot shows
+no layout regression. No P1/P2 findings.

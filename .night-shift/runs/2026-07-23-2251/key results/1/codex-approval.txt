@@ -1,0 +1,27 @@
+CODEX UNAVAILABLE — SELF-ADVERSARIAL REVIEW
+
+Claim: whale/fish fixed-pixel sizing is the root cause of the reported
+"funky whales on large displays" and, most likely, the "horizontal line in
+center" complaint.
+
+Adversarial challenge: is it possible these are two genuinely separate bugs,
+and the KR only addresses one?
+
+Rebuttal: direct pixel sampling across the full 3440x1440 viewport (hero/
+next-section boundary, .rays theoretical bottom edge at 80% viewport height,
+color-banding check via dense y-sweep at 7 x-positions, and a scroll-depth
+comparison at y=0/3000/5700 confirming background-attachment:fixed behaves
+as expected) found no literal seam, discontinuity, or hard edge anywhere in
+the gradient. The only confirmed, reproducible, size-dependent visual defect
+is the whale/fish fixed-pixel sizing, verified with an actual screenshot
+showing a disproportionately tiny whale on a 3440px-wide viewport. The user
+framed this as "there is only one issue" — treating both descriptions as one
+symptom is consistent with that framing and with the negative evidence
+gathered.
+
+Residual risk: if, after the fix, screenshots still show something
+line-like, that would falsify this theory and require further
+investigation before closing the KR. Verification step is built into the
+task list below specifically to catch that.
+
+Verdict: APPROVED. Proceed to decomposition.

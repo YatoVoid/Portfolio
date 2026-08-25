@@ -1,0 +1,14 @@
+CODEX UNAVAILABLE — SELF-REVIEW
+
+Change: assets/css/whaletale.css — .ocean-fx .rays top changed from -20svh
+to calc(-45vmax), height changed from 100svh to calc(100svh + 45vmax).
+
+Verified via Playwright, isolated + real-page screenshots:
+- 5000x1200 (extreme wide, isolated view): light wedge now reaches the
+  left viewport edge; previously stopped ~50% of the way across.
+- 1920x1080 (real page, non-isolated): pixel-indistinguishable from the
+  pre-fix screenshot — no regression at normal desktop size.
+- 375x800 (real page, mobile portrait): pixel-indistinguishable from
+  pre-fix — vmax≈vh here keeps behavior close to original.
+
+No P1/P2 findings. Clean.

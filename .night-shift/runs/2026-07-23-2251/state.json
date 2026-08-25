@@ -1,0 +1,87 @@
+{
+  "run_id": "2026-07-23-2251",
+  "status": "completed",
+  "started_at": "2026-07-23T22:51:28+0400",
+  "mode": "git",
+  "cwd": "/home/wali/Documents/GitHub/Portfolio",
+  "skill_dir": "/home/wali/.claude/plugins/cache/night-shift/night-shift/1.0.2/skills/night-shift",
+  "branch": "WebsiteOverhaul",
+  "base_commit": "ba7f2f316cc755065e9b28e7f4a03939fdade07d",
+  "expected_head": "dbc34931680d61564d96a9eb5bd635838ac7e49d",
+  "objective": "Fix background/gradient and whale-fish graphic sizing so the site looks correct on super large/wide displays, verified with screenshots.",
+  "hard_cap_hours": 8,
+  "average_task_duration_minutes": null,
+  "end_consensus_file": "end-consensus.txt",
+  "key_results": [
+    {
+      "id": 1,
+      "title": "Scale whale/fish ambient graphics to viewport size",
+      "why": "Fixes the reported large/wide-display rendering bug (funky whales / horizontal-line-in-center description) confirmed via pixel-level investigation to be fixed-pixel graphic sizing not scaling with viewport width.",
+      "status": "completed",
+      "codex_approval_file": "key results/1/codex-approval.txt",
+      "decomp_adversarial_file": "key results/1/decomp-adversarial.txt",
+      "started_at": "2026-07-23T22:59:00+0400",
+      "ended_at": "2026-07-23T22:59:00+0400",
+      "tasks": [
+        {
+          "id": 1,
+          "title": "Scale whale/fish size to viewport width in whaletale.js",
+          "status": "completed",
+          "commit": "ffca05c97dd0082cabf20bc0fa7bd902b9e1f590",
+          "code_review_file": "key results/1/tasks/1/code-review.txt",
+          "code_review_rounds": 1,
+          "code_review_status": "clean"
+        },
+        {
+          "id": 2,
+          "title": "Verify across pages and viewport sizes with screenshots",
+          "status": "completed",
+          "code_review_file": "key results/1/tasks/2/code-review.txt",
+          "code_review_rounds": 1,
+          "code_review_status": "clean"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Fix stale --win-h causing a visible seam on resize/zoom",
+      "why": "User reported a literal horizontal-line seam when resizing/zooming to ~60% size; reproduced and root-caused as --win-h going stale with no resize listener.",
+      "status": "completed",
+      "codex_approval_file": "key results/2/codex-approval.txt",
+      "started_at": "2026-07-23T23:12:09+0400",
+      "ended_at": "2026-07-23T23:12:09+0400",
+      "tasks": [
+        {
+          "id": 1,
+          "title": "Gate --win-h resize listener on width-change only",
+          "status": "completed",
+          "commit": "68ac90221717cf2fe9b8c72e82ba57e8dae3d775",
+          "code_review_file": "key results/2/tasks/1/code-review.txt",
+          "code_review_rounds": 1,
+          "code_review_status": "clean"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Fix light-ray effect not reaching screen edges on wide viewports",
+      "why": "User reported the light-ray effect stops partway on the left side at 20% zoom; reproduced and root-caused as a height-based origin offset that doesn't scale with width.",
+      "status": "completed",
+      "codex_approval_file": "key results/3/codex-approval.txt",
+      "started_at": "2026-07-23T23:35:14+0400",
+      "ended_at": "2026-07-23T23:35:14+0400",
+      "tasks": [
+        {
+          "id": 1,
+          "title": "Scale rays origin offset with vmax, compensate height",
+          "status": "completed",
+          "commit": "dbc34931680d61564d96a9eb5bd635838ac7e49d",
+          "code_review_file": "key results/3/tasks/1/code-review.txt",
+          "code_review_rounds": 1,
+          "code_review_status": "clean"
+        }
+      ]
+    }
+  ],
+  "test_results": null
+}

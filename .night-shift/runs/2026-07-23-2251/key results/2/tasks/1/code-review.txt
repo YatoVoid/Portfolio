@@ -1,0 +1,15 @@
+CODEX UNAVAILABLE — SELF-REVIEW
+
+Change: assets/js/whaletale.js — replaced one-time --win-h set with an IIFE
+that sets it once on load, then re-sets it on 'resize' events only when
+window.innerWidth actually changed since the last check.
+
+Verified via Playwright with before/after DOM measurement:
+- Width-changing resize (1440x900 -> 3440x1440, no reload): --win-h updates
+  900px -> 1440px, .ocean-fx bounding rect grows to fill the new viewport
+  (height 1440, was 900), seam eliminated in screenshot.
+- Height-only change (390x844 -> 390x700, simulating mobile toolbar
+  show/hide): --win-h stays at 844px, unchanged — confirms no regression of
+  the prior "toolbar-hide snap" fix.
+
+No P1/P2 findings. Clean.

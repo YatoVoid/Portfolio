@@ -1,0 +1,32 @@
+CODEX UNAVAILABLE — SELF-ADVERSARIAL REVIEW
+
+Challenge: is the vmax-based fix demonstrated to actually fix the reported
+symptom, or just theoretically plausible?
+
+Rebuttal: verified empirically, not just reasoned about — isolated
+screenshots at an extreme 5000x1200 test viewport show the light wedge
+reaching the left edge under the fix, versus stopping at ~50% width
+before. A prior attempt (plain -20vw, no height compensation) was tested,
+found to visibly clip the effect's vertical coverage, and rejected before
+landing on the vmax + compensated-height version.
+
+Challenge: does this change the everyday (normal-size) appearance of the
+site, given the coefficient increased from 20 to 45?
+
+Rebuttal: verified via direct before/after screenshot comparison of the
+real, non-isolated page at 1920x1080 — visually indistinguishable, since
+the effect is low-opacity (0.55) and blurred, blended into the base
+gradient either way. Also verified unchanged on mobile portrait (375x800),
+where vmax≈vh keeps behavior close to the original.
+
+Challenge: does the right side (which this whole conic-gradient design
+never illuminates, per the fixed 92-degree local range starting at 180deg)
+also need addressing?
+
+Rebuttal: out of scope — the user's report was specifically about the
+left side "stopping in the middle", not about the right side having no
+rays at all. That asymmetry is the existing design (the wedge is defined
+to sweep from straight-down toward due-left only) and changing it would be
+inventing scope beyond what was reported.
+
+Verdict: APPROVED.

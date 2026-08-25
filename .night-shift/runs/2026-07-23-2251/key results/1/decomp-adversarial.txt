@@ -1,0 +1,30 @@
+CODEX UNAVAILABLE — SELF-ADVERSARIAL REVIEW
+
+Challenge: is 1600px reference width justified, or arbitrary?
+
+Rebuttal: it's a conservative floor, not a load-bearing precision constant —
+its only job is "don't change anything at sizes already confirmed to look
+fine". Confirmed-fine sizes so far: 375px (mobile, no CSS override touches
+ocean-fx), typical laptop 1280-1440px screenshots taken earlier this
+session (WhaleTale hero screenshots at normal sizes, no complaint raised).
+The bug is specifically reported at 3440px+. Any reference value between
+~1440 and ~1920 would satisfy "don't touch normal sizes, scale up wide
+ones" equally well; 1600 sits in the middle of that band, not a magic
+number requiring precision.
+
+Challenge: does scaling `gap` risk making fish schools comically spread out
+on 5120px super-ultrawide?
+
+Rebuttal: gap base range is 3-10px; even at a 3.2x factor (5120/1600) that
+is 9.6-32px — still a tight school formation relative to individual fish
+now sized 38-90px+. No dampening needed.
+
+Challenge: does this touch the persisted schedule format, risking breaking
+existing users' localStorage state mid-session?
+
+Rebuttal: no — `e.w`/`e.sz`/`e.gap` are read as before; only the multiplier
+applied at spawn time changes. Existing schedules replay identically in
+their stored base values, just rendered at corrected size. No migration
+needed, matches how `topPx` already reads `window.innerHeight` live.
+
+Verdict: APPROVED. Proceed to implementation.
