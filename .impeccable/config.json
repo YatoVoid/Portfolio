@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "assets/css/whaletale.css"
+        ],
+        "createdAt": "2026-08-25T16:32:35.576Z",
+        "reason": "pre-existing .gradient-text accent class used consistently across the whole live site before this task; not new AI-generated styling"
+      },
+      {
+        "rule": "layout-transition",
+        "value": "*",
+        "files": [
+          "assets/css/whaletale.css"
+        ],
+        "createdAt": "2026-08-25T16:33:39.850Z",
+        "reason": "pre-existing nav/drawer padding transitions from before this task, small-scale and low-frequency (scroll-debounced nav shrink, hover indent on drawer links); not new code added this session"
+      }
+    ]
+  }
+}
