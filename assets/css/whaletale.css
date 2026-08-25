@@ -205,9 +205,10 @@ h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin
 /* ---- Navbar ---- */
 .nav {
 	position: fixed;
-	top: 14px; left: 50%;
+	top: calc(14px + env(safe-area-inset-top, 0px));
+	left: 50%;
 	transform: translateX(-50%);
-	width: min(94%, var(--maxw));
+	width: min(calc(94% - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px)), var(--maxw));
 	z-index: 100;
 	display: flex;
 	align-items: center;
@@ -309,7 +310,7 @@ h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
-	padding: 80px 44px 60px;
+	padding: calc(80px + env(safe-area-inset-top, 0px)) calc(44px + env(safe-area-inset-right, 0px)) calc(60px + env(safe-area-inset-bottom, 0px)) calc(44px + env(safe-area-inset-left, 0px));
 	overflow: hidden;
 }
 /* top shimmer line — animates in after opacity */
@@ -378,7 +379,8 @@ h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin
 .drawer a:nth-child(6) { transition-delay: 0.25s; }
 .drawer-brand {
 	position: absolute;
-	top: 26px; left: 44px;
+	top: calc(26px + env(safe-area-inset-top, 0px));
+	left: calc(44px + env(safe-area-inset-left, 0px));
 	display: flex;
 	align-items: center;
 	gap: 10px;
@@ -588,6 +590,31 @@ h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin
 	.field-row { grid-template-columns: 1fr; }
 	.footer-inner { flex-direction: column; text-align: center; }
 	.proj-card { min-height: auto; }
+}
+@media (max-width: 380px) {
+	.stats { grid-template-columns: 1fr; }
+	.stat { padding: 20px 18px; }
+	.hero { padding-top: 100px; }
+	.nav { padding: 8px 6px 8px 14px; }
+	.contact-card { padding: 22px; }
+}
+
+/* Short/landscape viewports (phones rotated, small laptops with a fixed
+   nav eating a big share of the height) — the hero no longer needs to
+   fill the whole viewport and the scroll hint just wastes space. */
+@media (max-height: 500px) and (max-width: 920px) {
+	.hero { min-height: auto; padding-top: 90px; padding-bottom: 32px; }
+	.scroll-hint { display: none; }
+	.hero-visual { margin-bottom: 0; }
+}
+
+/* Safe-area padding so content clears notches/home indicators in
+   landscape on phones (iPhone notch/Dynamic Island, punch-hole cams). */
+@supports (padding: max(0px)) {
+	.wrap {
+		padding-left: env(safe-area-inset-left, 0px);
+		padding-right: env(safe-area-inset-right, 0px);
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
