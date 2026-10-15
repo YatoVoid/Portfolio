@@ -119,19 +119,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ----------------------------------------------------------
-   UNDERWATER LIFE — whale & fish schools
-   All creatures use a stored 24-h schedule so navigation
-   never restarts their animations mid-swim.
+   UNDERWATER LIFE — distant fish schools, drawn as specks
+   Schools use a stored 24-h schedule so navigation
+   never restarts them mid-swim.
    ---------------------------------------------------------- */
 function initOceanLife() {
 	const container = document.querySelector('.ocean-fx');
 	if (!container) return;
 
-	const svgParser = new DOMParser();
 	const t0 = +localStorage.getItem('wt_t0') || Date.now();
 	const elapsedMs = Date.now() - t0;
 
-	// Deterministic per-fish param generator (mulberry32 PRNG)
+	// Deterministic per-speck param generator (mulberry32 PRNG)
 	function rng(seed) {
 		let s = seed | 0;
 		return () => {
@@ -142,7 +141,7 @@ function initOceanLife() {
 		};
 	}
 
-	// Whale/fish base sizes below were tuned against a ~1600px-wide viewport.
+	// School spacing below were tuned against a ~1600px-wide viewport.
 	// On wider screens that fixed pixel size shrinks proportionally into a
 	// tiny, disconnected speck, so scale sizes up (never down) for anything
 	// wider than that reference.
@@ -151,84 +150,7 @@ function initOceanLife() {
 		return Math.max(1, window.innerWidth / SIZE_REF_W);
 	}
 
-	const whaleSVGStr = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 110" aria-hidden="true">
-		<g style="transform-box:fill-box;transform-origin:50% 50%;animation:whaleBodyBob 3.5s ease-in-out infinite">
-			<polygon fill="rgba(5,18,52,0.28)"
-				points="40,52 65,32 110,18 160,14 205,20 240,32 268,46 280,56
-				        268,64 240,74 205,86 160,92 110,88 65,72 40,58"/>
-			<polygon fill="rgba(22,58,118,0.13)"
-				points="110,88 160,92 205,86 235,74 225,64 205,78 160,86 110,84"/>
-			<polygon fill="rgba(3,12,40,0.16)" points="65,32 110,18 88,52"/>
-			<polygon fill="rgba(3,12,40,0.16)" points="110,18 160,14 135,50"/>
-			<polygon fill="rgba(3,12,40,0.14)" points="160,14 205,20 183,50"/>
-			<polygon fill="rgba(3,12,40,0.11)" points="205,20 240,32 222,50"/>
-			<polygon fill="rgba(4,15,46,0.24)" points="148,14 132,3 116,14"/>
-			<polygon fill="rgba(4,15,46,0.20)" points="200,66 190,94 178,88 182,68"/>
-			<circle fill="rgba(0,8,28,0.58)" cx="272" cy="52" r="4"/>
-			<circle fill="rgba(255,255,255,0.38)" cx="270" cy="49" r="1.8"/>
-			<polygon fill="rgba(5,18,52,0.28)" points="40,52 40,58 50,55"/>
-		</g>
-		<g style="transform-box:fill-box;transform-origin:100% 50%;animation:whaleTailWag 2.4s ease-in-out infinite">
-			<polygon fill="rgba(4,15,46,0.27)" points="40,52 8,26 20,50"/>
-			<polygon fill="rgba(4,15,46,0.27)" points="40,58 8,84 20,60"/>
-		</g>
-	</svg>`;
-
-	// ---- WHALE SCHEDULE ----
-	const WHALE_KEY = 'wt_wsched2';
-	let wSched;
-	try { wSched = JSON.parse(localStorage.getItem(WHALE_KEY)); } catch(e) {}
-	if (!wSched) {
-		wSched = [];
-		let t = 12000 + Math.random() * 18000;
-		while (t < 86400000) {
-			const dur = +(28 + Math.random() * 16).toFixed(1);
-			wSched.push({ t: Math.round(t), dur, r: Math.random() > 0.5 ? 1 : 0,
-				w: Math.round(260 + Math.random() * 120), top: +(5 + Math.random() * 30).toFixed(1) });
-			t += dur * 1000 + 45000 + Math.random() * 55000;
-		}
-		try { localStorage.setItem(WHALE_KEY, JSON.stringify(wSched)); } catch(e) {}
-	}
-
-	function spawnWhale(e, delayS) {
-		const parsed = svgParser.parseFromString(whaleSVGStr, 'image/svg+xml');
-		const svg = document.importNode(parsed.documentElement, true);
-		const topPx = Math.round((e.top / 100) * window.innerHeight);
-		const w = Math.round(e.w * widthScale());
-		svg.style.cssText = `position:absolute;pointer-events:none;will-change:transform,opacity;top:${topPx}px;left:0;width:${w}px;animation:${e.r ? 'whaleLTR' : 'whaleRTL'} ${e.dur}s linear forwards;animation-delay:${delayS.toFixed(3)}s`;
-		container.appendChild(svg);
-		const rm = (e.dur + delayS) * 1000 + 500;
-		if (rm > 0) setTimeout(() => svg.remove(), rm);
-	}
-
-	let wNext = -1;
-	for (let i = 0; i < wSched.length; i++) {
-		const e = wSched[i];
-		if (e.t + e.dur * 1000 <= elapsedMs) continue;
-		if (e.t <= elapsedMs) { spawnWhale(e, -(elapsedMs - e.t) / 1000); wNext = i + 1; }
-		else { wNext = i; }
-		break;
-	}
-	(function schedW(idx) {
-		if (idx < 0 || idx >= wSched.length) return;
-		const e = wSched[idx];
-		setTimeout(() => { spawnWhale(e, 0); schedW(idx + 1); }, Math.max(0, e.t - elapsedMs));
-	})(wNext);
-
 	// ---- FISH SCHEDULE ----
-	function makeFishNode(bodyOpacity) {
-		const bo = bodyOpacity.toFixed(2);
-		const to = (bodyOpacity * 0.82).toFixed(2);
-		const str = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 20"
-			aria-hidden="true" style="display:block;width:100%;">
-			<path fill="rgba(100,192,255,${bo})" d="M31,10 C26,3 10,2 3,10 C10,18 26,17 31,10 Z"/>
-			<path fill="rgba(72,155,220,${to})" d="M3,10 L0,3 L0,17 Z"/>
-			<circle fill="rgba(0,22,52,0.55)" cx="27" cy="8" r="1.4"/>
-			<circle fill="rgba(255,255,255,0.35)" cx="26.2" cy="7.3" r="0.55"/>
-		</svg>`;
-		return document.importNode(svgParser.parseFromString(str, 'image/svg+xml').documentElement, true);
-	}
-
 	const FISH_KEY = 'wt_fsched';
 	let fSched;
 	try { fSched = JSON.parse(localStorage.getItem(FISH_KEY)); } catch(e) {}
@@ -255,12 +177,11 @@ function initOceanLife() {
 		group.style.cssText = `position:absolute;display:flex;align-items:center;gap:${gap.toFixed(1)}px;top:${topPx}px;left:0;pointer-events:none;will-change:transform,opacity;animation:${e.r ? 'fishLTR' : 'fishRTL'} ${e.dur}s linear forwards;animation-delay:${delayS.toFixed(3)}s`;
 		const rand = rng(e.seed);
 		for (let i = 0; i < e.n; i++) {
-			const sz = e.sz * scale * (0.65 + rand() * 0.7), op = 0.65 + rand() * 0.35;
+			const sz = (2 + rand() * 2) * scale, op = 0.65 + rand() * 0.35;
 			const yo = Math.round(rand() * 30 - 15), bd = +(1.1 + rand() * 0.9).toFixed(2), bdy = +(rand() * 0.8).toFixed(2);
-			const wrap = document.createElement('div');
-			wrap.style.cssText = `width:${sz.toFixed(1)}px;flex-shrink:0;margin-top:${yo}px;opacity:${e.opa};animation:fishBob ${bd}s ease-in-out ${bdy}s infinite alternate`;
-			wrap.appendChild(makeFishNode(op));
-			group.appendChild(wrap);
+			const speck = document.createElement('div');
+			speck.style.cssText = `width:${sz.toFixed(1)}px;height:${sz.toFixed(1)}px;border-radius:50%;flex-shrink:0;margin-top:${yo}px;background:rgba(100,192,255,${op.toFixed(2)});opacity:${e.opa};animation:fishBob ${bd}s ease-in-out ${bdy}s infinite alternate`;
+			group.appendChild(speck);
 		}
 		container.appendChild(group);
 		const rm = (e.dur + delayS) * 1000 + 500;

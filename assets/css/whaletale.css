@@ -623,20 +623,8 @@ h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin
 }
 
 /* ============================================================
-   UNDERWATER LIFE — whale & fish schools
+   UNDERWATER LIFE — distant fish schools
    ============================================================ */
-@keyframes whaleLTR {
-	0%   { transform: translate3d(-500px, 0, 0); opacity: 0; }
-	5%   { opacity: 1; }
-	92%  { opacity: 1; }
-	100% { transform: translate3d(calc(100vw + 500px), 0, 0); opacity: 0; }
-}
-@keyframes whaleRTL {
-	0%   { transform: translate3d(calc(100vw + 500px), 0, 0) scaleX(-1); opacity: 0; }
-	5%   { opacity: 1; }
-	92%  { opacity: 1; }
-	100% { transform: translate3d(-500px, 0, 0) scaleX(-1); opacity: 0; }
-}
 @keyframes fishLTR {
 	0%   { transform: translate3d(-160px, 0, 0); opacity: 0; }
 	8%   { opacity: 1; }
@@ -652,14 +640,6 @@ h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin
 @keyframes fishBob {
 	from { transform: translateY(-3px); }
 	to   { transform: translateY(3px); }
-}
-@keyframes whaleTailWag {
-	0%, 100% { transform: rotate(-14deg); }
-	50%       { transform: rotate(14deg); }
-}
-@keyframes whaleBodyBob {
-	0%, 100% { transform: translateY(-4px); }
-	50%       { transform: translateY(4px); }
 }
 
 /* ============================================================
